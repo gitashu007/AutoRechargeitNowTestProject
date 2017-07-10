@@ -1,0 +1,29 @@
+package com.rechargeitnow.projectPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
+import com.rechargeitnow.pageObject.PaymentGatewayPageObject;
+import com.rechargeitnow.pages.BaseClass;
+import com.rechargeitnow.pages.ILogLevel;
+
+import io.appium.java_client.AppiumDriver;
+
+public class PaymentGatewayPage extends BaseClass {
+
+	public PaymentGatewayPage(AppiumDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void clickRINUrl(){
+        pause(2);
+		waitForElementDisplayed(By.linkText(PaymentGatewayPageObject.rinUrl_LinkText));
+		driver.findElement(By.linkText(PaymentGatewayPageObject.rinUrl_LinkText)).click();
+		log("click on [www.rechargeitnow.com] link to fail transaction", ILogLevel.METHOD);
+	}
+	
+	
+
+}
