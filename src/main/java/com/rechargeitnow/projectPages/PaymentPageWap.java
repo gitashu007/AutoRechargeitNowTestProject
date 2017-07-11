@@ -18,8 +18,11 @@ public class PaymentPageWap extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 
+	String payableAmount = " ";
+	String payableAmountScen6 = " ";
+	String payableAmountData = " ";
+	
 	public boolean isRechargeAmountCorrect(){
-
 		waitForElementDisplayed(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath));
 		String expectedNumber = TestCore.config.getProperty("Recharge_Amount");
 		String actualNumber = driver.findElement(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath)).getText();
@@ -87,7 +90,7 @@ public class PaymentPageWap extends BaseClass {
 		}return false;
 	}
 	
-	String payableAmount = " ";
+	
 	public boolean isPayableAmountPaymentPagePresent(String _expectedPayableAmount){
 		waitForElementDisplayed(By.id(PaymentPageWapObject.summaryPayableAmountText_Xpath));
 		 payableAmount = driver.findElement(By.xpath(PaymentPageWapObject.summaryPayableAmountText_Xpath)).getText();
@@ -96,11 +99,26 @@ public class PaymentPageWap extends BaseClass {
 		 }return false;
 	}
 	
-	String payableAmountScen6 = " ";
 	public boolean isPayableAmountPaymentScen6(String _expectedPayableAmount){
 		waitForElementDisplayed(By.id(PaymentPageWapObject.summaryPayableAmountTextScen6_xpath));
 		 payableAmountScen6 = driver.findElement(By.xpath(PaymentPageWapObject.summaryPayableAmountTextScen6_xpath)).getText();
 		 if(payableAmountScen6.contains(_expectedPayableAmount)){
+			 return true;
+		 }return false;
+	}
+	
+	public boolean isPayableAmountPaymentData2(String _expectedPayableAmount){
+		waitForElementDisplayed(By.id(PaymentPageWapObject.payableAmountTextData_Xpath));
+		 String payableAmountData2 = driver.findElement(By.xpath(PaymentPageWapObject.payableAmountTextData_Xpath)).getText();
+		 if(payableAmountData2.contains(_expectedPayableAmount)){
+			 return true;
+		 }return false;
+	}
+	
+	public boolean isPayableAmountPaymentData(String _expectedPayableAmount){
+		waitForElementDisplayed(By.id(SummaryPageWapObject.PDCAmountText_Xpath));
+		 payableAmountData = driver.findElement(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath)).getText();
+		 if(payableAmountData.contains(_expectedPayableAmount)){
 			 return true;
 		 }return false;
 	}

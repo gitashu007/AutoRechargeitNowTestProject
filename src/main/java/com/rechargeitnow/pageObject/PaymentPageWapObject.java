@@ -14,6 +14,7 @@ public class PaymentPageWapObject {
 	public static String netPayableAmount_Id = "withoutone";
 	public static String summaryPayableAmountText_Xpath = "//*[@id='paymentform']/div[1]/ul/li[7]";
 	public static String summaryPayableAmountTextScen6_xpath = "//*[@id='paymentform']/div[1]/ul/li[6]";
+	public static String payableAmountTextData_Xpath = "//*[@id='paymentform']/div[1]/ul/li[8]";
 	
 	
 

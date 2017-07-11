@@ -116,7 +116,14 @@ public class ReceiptPageWap extends BaseClass {
 		String receiptCouponValue = driver.findElement(By.xpath(ReceiptPageWapObject.couponValueText_Xpath2)).getText();
 		if(receiptCouponValue.equals("10")){
 			return true;
-			
+		}return false;
+	}
+	
+	public boolean verifyReceiptCouponValueLoc2(){
+		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.couponvalueTextLoc2_Xpath));
+		String receiptCouponValue = driver.findElement(By.xpath(ReceiptPageWapObject.couponvalueTextLoc2_Xpath)).getText();
+		if(receiptCouponValue.equals("10")){
+			return true;
 		}return false;
 	}
 

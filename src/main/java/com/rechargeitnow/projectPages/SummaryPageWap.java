@@ -68,6 +68,14 @@ public class SummaryPageWap extends BaseClass {
 		}return false;
 	}
 	
+	public boolean isappliedRINcashDisplayedData(){
+		waitForElementDisplayed(By.xpath(SummaryPageWapObject.RINcashAmountText_Xpath));
+		boolean RINcash = isElementPresent(By.xpath(SummaryPageWapObject.RINcashAmountText_Xpath));
+		if(RINcash){
+			return true;
+		}return false;
+	}
+	
 	public boolean isPDCapplied(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath));
 		String PDCAmount = driver.findElement(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath)).getText();
@@ -83,5 +91,6 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return true;
 	}
+	
 
 }

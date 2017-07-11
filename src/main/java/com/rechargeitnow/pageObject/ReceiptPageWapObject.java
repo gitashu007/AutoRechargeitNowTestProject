@@ -17,6 +17,7 @@ public class ReceiptPageWapObject {
 	
 	public static String RINcashPointText_Xpath = "//*[@id='WapReceipt']/div/div[4]/section/ul/li[5]/span[2]";
 	public static String couponValueText_Xpath2 = "//*[@id='WapReceipt']/div/div[4]/section/ul/li[7]/span[2]";
+	public static String couponvalueTextLoc2_Xpath = "//*[@id='WapReceipt']/div/div[4]/section/ul/li[8]/span[2]";
 
 	
 }
