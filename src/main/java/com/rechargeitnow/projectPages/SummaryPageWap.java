@@ -31,6 +31,14 @@ public class SummaryPageWap extends BaseClass {
 		}
 	}
 	
+	public boolean verifyNetPayableAmount(String _expectedAmount){
+		waitForElementDisplayed(By.xpath(SummaryPageWapObject.netPayableAmount_Xpath));
+		String amount = driver.findElement(By.xpath(SummaryPageWapObject.netPayableAmount_Xpath)).getText();
+		if(amount.contains(_expectedAmount)){
+			return true;
+		}return false;
+	}
+	
 	public void clickProceedSummaryButton(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.proceedSummaryButton_Xpath));
 		driver.findElement(By.xpath(SummaryPageWapObject.proceedSummaryButton_Xpath)).click();

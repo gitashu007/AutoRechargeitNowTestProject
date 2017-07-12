@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name='Wap recharge transaction flow test' verbose='10'>
+
+	<!-- Recharge transaction flow -->
+	<suite-files>
+		<suite-file path=".//src/test/resources/LoginTest.xml"></suite-file>
+		<suite-file path=".//src/test/resources/MobileRechargeTransactionTest.xml"></suite-file>
+		<suite-file path=".//src/test/resources/DataRechargeTransactionTest.xml"></suite-file>
+	</suite-files>
+</suite>

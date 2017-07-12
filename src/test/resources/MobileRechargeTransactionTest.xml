@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test mobile recharge transaction flow">
+
+	<test name="Mobile recharge flow : Scenario_1" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponScen1" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_2" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponRINcashScen2" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_3" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPromoRINcashScen3" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_4" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPromoRINcashPGScen4" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_6" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPromoScen6" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_7" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPDCPromoPGScen7" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_8" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponRINcashPGScen8" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_9" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPDCRINcashPGScen9" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_10" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponRincashPromoPDCScen10" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_12" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINcashScen12" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_13" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINPromoScen13" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_14" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINPGScen14" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_15" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINcashPDCScen15" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_16" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testRechargeFlow_CouponRINcashPDCScen16" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_17" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINcashPromoPGScen17" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_18" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINcashPromoPDCScen18" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_19" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_PDCRINcashPGScen19" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Mobile recharge flow : Scenario_20" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testRechargeFlow_PromoPGScen20" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->

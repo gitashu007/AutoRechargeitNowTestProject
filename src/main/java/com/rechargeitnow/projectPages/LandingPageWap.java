@@ -15,7 +15,6 @@ public class LandingPageWap extends BaseClass{
 
 	public LandingPageWap(AppiumDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void clickRechargeTypeButton(String _rechargeType){
@@ -32,16 +31,15 @@ public class LandingPageWap extends BaseClass{
 	public void enterMobileNumber(String _mobileNumber){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.mobileNumberField_Xpath));
 		driver.findElement(By.xpath(LandingPageWapObject.mobileNumberField_Xpath)).sendKeys(_mobileNumber);
-		log("enter the [Mobile Number]", ILogLevel.METHOD);
+		log("enter [Mobile Number]", ILogLevel.METHOD);
 	}
 	
 	public void enterMobileNumberData(String _mobileNumber){
 			waitForElementDisplayed(By.id(LandingPageWapObject.mobileNumberFieldData_Id));
 			driver.findElement(By.id(LandingPageWapObject.mobileNumberFieldData_Id)).sendKeys(_mobileNumber);
-			log("enter the [Mobile Number]", ILogLevel.METHOD);
+			log("enter [Mobile Number]", ILogLevel.METHOD);
 		}
 	
-
 	public void clickSubmitButton2(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButton_Xpath));
 		driver.findElement(By.xpath(LandingPageWapObject.submitButton_Xpath)).click();
@@ -52,7 +50,6 @@ public class LandingPageWap extends BaseClass{
 		driver.findElement(By.xpath(LandingPageWapObject.submitButtonData2_Xpath)).click();
 		log("click on [Submit] button", ILogLevel.METHOD);
 	}
-
 
 	public void selectConfirmNumberRadioButton(){
 		pause(2);
@@ -102,7 +99,6 @@ public class LandingPageWap extends BaseClass{
 	}
 	
 	public void clickSubmitButtonData(){
-		//pause(3);
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButtonData_xpath));
 		driver.findElement(By.xpath(LandingPageWapObject.submitButtonData_xpath)).click();
 		log("click on [Submit] button", ILogLevel.METHOD);

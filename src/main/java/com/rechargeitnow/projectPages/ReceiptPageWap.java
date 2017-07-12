@@ -111,6 +111,14 @@ public class ReceiptPageWap extends BaseClass {
 		}return false;
 	}
 	
+	public boolean isPromoDiscountDisplayed(String _appliedPromoAmount){
+		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.promoDiscountText_Xpath));
+		String promoDiscount = driver.findElement(By.xpath(ReceiptPageWapObject.promoDiscountText_Xpath)).getText();
+		if(promoDiscount.equals(_appliedPromoAmount)){
+			return true;
+		}return false;
+	}
+	
 	public boolean verifyReceiptCouponValue(){
 		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.couponValueText_Xpath2));
 		String receiptCouponValue = driver.findElement(By.xpath(ReceiptPageWapObject.couponValueText_Xpath2)).getText();
@@ -126,5 +134,15 @@ public class ReceiptPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
+	
+	public boolean verifyReceiptCouponValueLoc3(){
+		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.couponValueTextLoc3_Xpath));
+		String receiptCouponValue = driver.findElement(By.xpath(ReceiptPageWapObject.couponValueTextLoc3_Xpath)).getText();
+		if(receiptCouponValue.contains("10")){
+			return true;
+		}return false;
+	}
+	
+	
 
 }

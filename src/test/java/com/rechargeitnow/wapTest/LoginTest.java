@@ -12,7 +12,10 @@ public class LoginTest extends TestCore{
 	public void testLogin(){
 		LoginPageWap loginPage = new LoginPageWap(driver);
 		
-		//homePage.clickLoginButton();
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+		
 		loginPage.enterEmailId(config.getProperty("emailId"));
 		loginPage.enterPassword(config.getProperty("password"));
 		loginPage.clickSubmitButton();

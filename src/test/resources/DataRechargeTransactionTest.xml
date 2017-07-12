@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test data recharge transaction flow">
+
+	<test name="data recharge flow : Scenario_21" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_PDCPromoPGScen21" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_22" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_PGScen22" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_23" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPGScen23" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_24" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_PGandPDCScen24" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_25" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPDCandPGScen25" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_26" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CpnPDCPromoRINandPGScen26" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="data recharge flow : Scenario_31" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINcashPGPromoAndPDCScen31" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+</suite>

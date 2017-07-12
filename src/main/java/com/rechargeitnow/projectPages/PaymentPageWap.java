@@ -52,7 +52,6 @@ public class PaymentPageWap extends BaseClass {
 	}
 	
 	public boolean isRechargeAmountExpected(String expectedAmount){
-
 		waitForElementDisplayed(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath));
 		String payableAmount = driver.findElement(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath)).getText();
 		if(payableAmount.equals(expectedAmount)){

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test login">
+
+	<test name="data recharge flow : Scenario_21" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

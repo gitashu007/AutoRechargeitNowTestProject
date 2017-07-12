@@ -16,7 +16,7 @@ import com.rechargeitnow.projectPages.SummaryPageWap;
 public class DataRechargeTransactionTest extends TestCore{
 
 	@Test(priority=0)
-	public void testDataRechargeFlow_PDCPromoPG(){
+	public void testDataRechargeFlow_PDCPromoPGScen21(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -68,7 +68,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 	}
 	@Test(priority=1)
-	public void testDataRechargeFlow_PG(){
+	public void testDataRechargeFlow_PGScen22(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -114,7 +114,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 	}
 	@Test(priority=2)
-	public void testDataRechargeFlow_CouponPG(){
+	public void testDataRechargeFlow_CouponPGScen23(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -163,11 +163,12 @@ public class DataRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
 		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 		receiptPage.clickStartAgainButton();
 	}
 
 	@Test(priority=3)
-	public void testDataRechargeFlow_PGandPDC(){
+	public void testDataRechargeFlow_PGandPDCScen24(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -215,7 +216,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		receiptPage.clickStartAgainButton();
 	}
 	@Test(priority=4)
-	public void testDataRechargeFlow_CouponPDCandPG(){
+	public void testDataRechargeFlow_CouponPDCandPGScen25(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -266,7 +267,7 @@ public class DataRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=5)
-	public void testDataRechargeFlow_CpnPDCPromoRINandPG(){
+	public void testDataRechargeFlow_CpnPDCPromoRINandPGScen26(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -319,10 +320,11 @@ public class DataRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
 		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 		receiptPage.clickStartAgainButton();
 	}
 	@Test(priority=6)
-	public void testDataRechargeFlow_RINcashPGPromoAndPDC(){
+	public void testDataRechargeFlow_RINcashPGPromoAndPDCScen31(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
