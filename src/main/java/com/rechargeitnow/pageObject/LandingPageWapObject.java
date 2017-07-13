@@ -14,6 +14,19 @@ public class LandingPageWapObject {
 	public static String selectOperatorDropdownData_Css = "#select2-chosen-2";
 	public static String submitButtonData_xpath = "//input[@onclick='SubmitMobile()']";
 	public static String dataRechargetypeButton_Xpath = "//*[@id='dataFmnp']/h3/a/span/span[1]";
+	public static String postpaidMobileNumberField_Xpath = "//input[@placeholder='enter postpaid mobile number']";
+	public static String postpaidOperator_Id = "billpayOperatorId";
+	public static String postpaidSubmitButton_Id = "submit3";
+	public static String DTHOperator_Id = "dthServiceProviderId";
+	
+	public static String airtelDTHNumberField_Id = "dthSubscriberID_36";
+	public static String dishDTHNumberField_Id = "dthSubscriberID_17";
+	public static String relianceDTHNumberField_Id = "dthSubscriberID_35";
+	public static String sunDirectDTHNumberField_Id = "dthSubscriberID_21";
+	public static String tataNumberField_Id = "dthSubscriberID_19";
+	public static String videoconDTHNumberField_Id = "dthSubscriberID_27";
+	public static String DTHSubmitButton_Xpath = "//input[@onclick='DthSubmitRequest()']";
+	
 	
 	
 }

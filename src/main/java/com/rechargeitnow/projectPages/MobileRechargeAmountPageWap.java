@@ -16,9 +16,8 @@ public class MobileRechargeAmountPageWap extends BaseClass{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public boolean isMobileNumberCorrect(){
-		waitForElementDisplayed(By.xpath(MobileRechargeAmountPageWapObject.mobileNumberText_Xpath));
-		String expectedNumber = TestCore.config.getProperty("Mobile_Number");
+	public boolean isMobileNumberCorrect(String expectedNumber){
+		waitForElementDisplayed(By.xpath(MobileRechargeAmountPageWapObject.mobileNumberText_Xpath));;
 		String actualNumber = driver.findElement(By.xpath(MobileRechargeAmountPageWapObject.mobileNumberText_Xpath)).getText();
 		if(actualNumber.equals(expectedNumber)){
 			return true;
@@ -52,6 +51,12 @@ public class MobileRechargeAmountPageWap extends BaseClass{
 		waitForElementDisplayed(By.id(MobileRechargeAmountPageWapObject.yesRadioButton_Id));
 		driver.findElement(By.id(MobileRechargeAmountPageWapObject.yesRadioButton_Id)).click();
 		log("click on [Yes] radio button",ILogLevel.METHOD);
+	}
+	
+	public void clickOKButton(){
+		waitForElementDisplayed(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath));
+		driver.findElement(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath)).click();
+		log("click on [ok] button",ILogLevel.METHOD);
 	}
 	
 

@@ -10,6 +10,7 @@ public class MobileRechargeAmountPageWapObject {
 	public static String couponAmountField_Id = "couponAmountId";
 	public static String couponCodeField_Id = "couponCodeId";
 	public static String yesRadioButton_Id = "yesId";
+	public static String okButton_Xpath = "//input[@value='ok']";
 	
 	
 

@@ -3,7 +3,6 @@ package com.rechargeitnow.wapTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.rechargeitnow.pageObject.PaymentPageWapObject;
 import com.rechargeitnow.pages.TestCore;
 import com.rechargeitnow.projectPages.HomePageWap;
 import com.rechargeitnow.projectPages.LandingPageWap;
@@ -14,11 +13,10 @@ import com.rechargeitnow.projectPages.PaymentPageWap;
 import com.rechargeitnow.projectPages.ReceiptPageWap;
 import com.rechargeitnow.projectPages.SummaryPageWap;
 
-public class MobileRechargeTransactionTest extends TestCore{
-
+public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	
 	@Test(priority=0)
-	public void testMobileRechargeFlow_CouponScen1(){
+	public void testPostpaidBillPayFlow_couponScen1(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
@@ -30,16 +28,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -54,11 +49,10 @@ public class MobileRechargeTransactionTest extends TestCore{
 	    Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
 	    Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 	    Assert.assertTrue(receiptPage.verifyCouponValue(), "verification of Coupon is failed");
-	    
 	}
-
+	
 	@Test(priority=1)
-	public void testMobileRechargeFlow_CouponRINcashScen2(){
+	public void testPostpaidBillPayFlow_CouponRINcashScen2(){
 		
 		
 		HomePageWap homePage = new HomePageWap(driver);
@@ -73,16 +67,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -106,7 +97,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=2)
-	public void testMobileRechargeFlow_CouponPromoRINcashScen3(){
+	public void testPostpaidBillPayFlow_CouponPromoRINcashScen3(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -119,16 +110,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -155,7 +143,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=3)
-	public void testMobileRechargeFlow_CouponPromoRINcashPGScen4(){
+	public void testPostpaidBillPayFlow_CouponPromoRINcashPGScen4(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -168,16 +156,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("19");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -215,7 +200,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=4)
-	public void testMobileRechargeFlow_CouponPromoScen6(){
+	public void testPostpaidBillPayFlow_CouponPromoPGScen6(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -228,16 +213,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
-
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+		
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("16");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -272,7 +254,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=5)
-	public void testMobileRechargeFlow_CouponPDCPromoPGScen7(){
+	public void testPostpaidBillPayFlow_CouponPDCPromoPGScen7(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -285,16 +267,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -328,7 +307,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=6)
-	public void testMobileRechargeFlow_CouponRINcashPGScen8(){
+	public void testPostpaidBillPayFlow_CouponRINcashPGScen8(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -341,16 +320,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("16");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -385,7 +361,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=7)
-	public void testMobileRechargeFlow_CouponPDCRINcashPGScen9(){
+	public void testPostpaidBillPayFlow_CouponPDCRINcashPGScen9(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -398,16 +374,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -440,7 +413,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=8)
-	public void testMobileRechargeFlow_CouponRincashPromoPDCScen10(){
+	public void testPostpaidBillPayFlow_CouponRincashPromoPDCScen10(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -453,16 +426,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -487,7 +457,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=9)
-	public void testMobileRechargeFlow_RINcashScen12(){
+	public void testPostpaidBillPayFlow_RINcashScen12(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -500,16 +470,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 
@@ -530,7 +497,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=10)
-	public void testMobileRechargeFlow_RINPromoScen13(){
+	public void testPostpaidBillPayFlow_RINPromoScen13(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -543,16 +510,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 
@@ -576,7 +540,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=11)
-	public void testMobileRechargeFlow_RINPGScen14(){
+	public void testPostpaidBillPayFlow_RINPGScen14(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -589,16 +553,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 
@@ -630,7 +591,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=12)
-	public void testMobileRechargeFlow_RINcashPDCScen15(){
+	public void testPostpaidBillPayFlow_RINcashPDCScen15(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -643,16 +604,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 
@@ -674,7 +632,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=13)
-	public void testRechargeFlow_CouponRINcashPDCScen16(){
+	public void testPostpaidBillPayFlow_CouponRINcashPDCScen16(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -687,16 +645,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("15");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
@@ -721,7 +676,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 		
 	}
 	@Test(priority=14)
-	public void testMobileRechargeFlow_RINcashPromoPGScen17(){
+	public void testPostpaidBillPayFlow_RINcashPromoPGScen17(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -734,16 +689,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 		
@@ -779,7 +731,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=15)
-	public void testMobileRechargeFlow_RINcashPromoPDCScen18(){
+	public void testPostpaidBillPayFlow_RINcashPromoPDCScen18(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -792,16 +744,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 		
@@ -822,7 +771,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=16)
-	public void testMobileRechargeFlow_PDCRINcashPGScen19(){
+	public void testPostpaidBillPayFlow_PDCRINcashPGScen19(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -835,16 +784,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 		
@@ -874,7 +820,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=17)
-	public void testRechargeFlow_PromoPGScen20(){
+	public void testPostpaidBillPayFlow_PromoPGScen20(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
@@ -887,16 +833,13 @@ public class MobileRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
 
 		LandingPageWap landingPage = new LandingPageWap(driver);
-		landingPage.clickRechargeTypeButton("mobile");
-		landingPage.enterMobileNumber(config.getProperty("Mobile_Number"));
-		landingPage.clickSubmitButton2();
-		landingPage.selectConfirmNumberRadioButton();
-		landingPage.selectOperator(config.getProperty("Mobile_Operator"));
-		landingPage.selectCircle(config.getProperty("Circle"));
-		landingPage.clickSubmitButton3();
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
 		rechargeAmountPage.enterRechargeAmount("10");
 		rechargeAmountPage.clickProceedButton();
 		

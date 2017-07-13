@@ -97,12 +97,6 @@ public class ReceiptPageWap extends BaseClass {
 		}return false;
 	}
 	
-	public void clickRINLogo(){
-		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.RINLogo_Xpath));
-		driver.findElement(By.xpath(ReceiptPageWapObject.RINLogo_Xpath)).click();
-		log("click on [RIN Logo] link ", ILogLevel.METHOD);
-	}
-	
 	public boolean isRINcashPointDisplayed(String _appliedRINcash){
 		waitForElementDisplayed(By.xpath(ReceiptPageWapObject.RINcashPointText_Xpath));
 		String RINcash_Point = driver.findElement(By.xpath(ReceiptPageWapObject.RINcashPointText_Xpath)).getText();
