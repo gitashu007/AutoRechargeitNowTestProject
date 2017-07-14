@@ -15,6 +15,43 @@ import com.rechargeitnow.projectPages.SummaryPageWap;
 
 public class DTHRechargeTransactionTest extends TestCore{
 	
+	/*@Test(priority=0)
+	public void testDTHRechargeFlow_CouponScen1(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+        homePage.clickLoginButton();
+
+        LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("dth");
+		landingPage.selectDTHOperator("sun direct");
+		landingPage.enterSunDirectNumber(config.getProperty("SunDirect_Number"));
+		landingPage.clickDTHSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("SunDirect_Number")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("10");
+		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
+		rechargeAmountPage.clickProceedButton();
+
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		Assert.assertTrue(summaryPage.verifyNetPayableAmount("0"), "Verification of net amount is failed");
+		summaryPage.clickProceedSummaryButton();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		receiptPage.clickHereToStopLink();
+	    Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
+	    Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("SunDirect_Number")),"DTH no. is different on receipt page");
+	    Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
+	    Assert.assertTrue(receiptPage.verifyCouponValue(), "verification of Coupon is failed");
+	    
+	}*/
+	
 	@Test(priority=0)
 	public void testDTHRechargeFlow_CouponPromoRINcashPGScen4(){
 		HomePageWap homePage = new HomePageWap(driver);
@@ -35,14 +72,14 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickYesRadioButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("40"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("240"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
 		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
@@ -55,7 +92,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		Assert.assertTrue(summaryPage.isAppliedPromoDisplayed(), "Promo code is not applied");
 		Assert.assertTrue(summaryPage.isappliedRINcashDisplayed(), "RINcash is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("38"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("238"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -71,7 +108,6 @@ public class DTHRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("DTH_Number")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
-		homePage.clickLuckyDrawCrossIcon2();
 	}
 	@Test(priority=1)
 	public void testDTHRechargeFlow_CouponPDCPromoPGScen7(){
@@ -94,14 +130,14 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickYesRadioButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("40"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("240"), "Payable amount is wrong on payment page");
 		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
 		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
 
@@ -111,12 +147,13 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		Assert.assertTrue(summaryPage.isPDCapplied(), "Partner Discount Coupon is not applied");
 		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo code is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("49"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("249"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -148,14 +185,14 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickYesRadioButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("40"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("240"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.enterRINcashAmount("1");
 		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
@@ -165,7 +202,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		Assert.assertTrue(summaryPage.isRINcashApplied("1"), "RINcash is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("39"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("239"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -173,6 +210,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -203,14 +241,14 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickYesRadioButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("40"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("240"), "Payable amount is wrong on payment page");
 		paymentPage.enterRINcashAmount("1");
 		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
 
@@ -220,12 +258,13 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		Assert.assertTrue(summaryPage.isPDCapplied(), "Partner Discount Coupon is not applied");
 		Assert.assertTrue(summaryPage.isRINcashAppliedPDC(), "RINcash is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("49"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("249"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -256,12 +295,12 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("50"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("250"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.enterRINcashAmount("1");
 		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
@@ -271,7 +310,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		Assert.assertTrue(summaryPage.isRINcashApplied("1"), "RINcash is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("49"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("249"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -279,6 +318,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -307,12 +347,12 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickOKButton();
 		
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("50"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("250"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
 		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
@@ -325,7 +365,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		
 		Assert.assertTrue(summaryPage.isRINcashApplied("1"), "RINcash is not applied");
 		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo code is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("48"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("248"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -333,6 +373,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -363,12 +404,12 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickOKButton();
 		
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("50"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("250"), "Payable amount is wrong on payment page");
 		paymentPage.enterRINcashAmount("1");
 		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
 
@@ -378,12 +419,13 @@ public class DTHRechargeTransactionTest extends TestCore{
 		
 		Assert.assertTrue(summaryPage.isRINcashApplied("1"), "RINcash is not applied");
 		Assert.assertTrue(summaryPage.isPDCapplied(), "Partner Discount Coupon is not displayed on summary page");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("59"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("259"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -413,12 +455,12 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickOKButton();
 		
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("50"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("250"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
 		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
@@ -428,7 +470,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 		
 		Assert.assertTrue(summaryPage.isAppliedPromoDisplayed(), "Promo code is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("49"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("249"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -436,6 +478,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -465,14 +508,14 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
-		rechargeAmountPage.enterRechargeAmount("50");
+		rechargeAmountPage.enterRechargeAmount("250");
 		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
 		rechargeAmountPage.clickProceedButton();
 		rechargeAmountPage.clickYesRadioButton();
 		rechargeAmountPage.clickOKButton();
 
 		PaymentPageWap paymentPage = new PaymentPageWap(driver);
-		Assert.assertTrue(paymentPage.isRechargeAmountExpected("40"), "Payable amount is wrong on payment page");
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("240"), "Payable amount is wrong on payment page");
 		paymentPage.clickPDCCheckBox();
 		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
 		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
@@ -482,7 +525,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		Assert.assertTrue(summaryPage.isAppliedPromoDisplayed(), "Promo code is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("39"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("239"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
@@ -490,6 +533,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");

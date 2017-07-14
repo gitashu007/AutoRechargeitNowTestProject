@@ -2,7 +2,58 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="To test login">
 
-	<test name="data recharge flow : Scenario_21" enabled="true">
+	<test name="test login with invalid email id" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLoginWithInvalidEmail" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="test login with invalid password" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLoginWithInvalidPassword" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="test login with unregistered email id" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLoginWithUnregisteredEmail" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+
+	<test name="test login with blank email" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLoginWithBlankEmail" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="test login with blank password" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LoginTest">
+				<methods>
+					<include name="testLoginWithBlankPassword" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="test login with valid details" enabled="true">
 		<classes>
 			<class name="com.rechargeitnow.wapTest.LoginTest">
 				<methods>
@@ -11,4 +62,4 @@
 			</class>
 		</classes>
 	</test> <!-- Test -->
-	</suite>
+</suite>

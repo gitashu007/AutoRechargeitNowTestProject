@@ -53,8 +53,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	
 	@Test(priority=1)
 	public void testPostpaidBillPayFlow_CouponRINcashScen2(){
-		
-		
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();

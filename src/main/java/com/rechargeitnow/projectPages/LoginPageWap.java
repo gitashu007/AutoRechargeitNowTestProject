@@ -21,6 +21,16 @@ public class LoginPageWap extends BaseClass{
 		log("enter [registered email]", ILogLevel.METHOD);
 	}
 	
+	public void clearEmailField(){
+		waitForElementDisplayed(By.id(LoginPageWapObject.emailIdField_Id));
+		driver.findElement(By.id(LoginPageWapObject.emailIdField_Id)).clear();
+	}
+	
+	public void clearPasswordField(){
+		waitForElementDisplayed(By.id(LoginPageWapObject.passwordField_Id));
+		driver.findElement(By.id(LoginPageWapObject.passwordField_Id)).clear();
+	}
+	
 	public void enterPassword(String _pass){
 		waitForElementDisplayed(By.id(LoginPageWapObject.passwordField_Id));
 		driver.findElement(By.id(LoginPageWapObject.passwordField_Id)).sendKeys(_pass);
@@ -43,5 +53,20 @@ public class LoginPageWap extends BaseClass{
 		return false;
 		
 	}
+	
+	public boolean isValidationAppears(String expectedError){
+		waitForElementDisplayed(By.id(LoginPageWapObject.errorMessage_Id));
+		String actualError = driver.findElement(By.id(LoginPageWapObject.errorMessage_Id)).getText();
+		if(actualError.contains(expectedError)){
+			return true;
+		}return false;
+	}
+	
+	public void clickRegisterButton(){
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.registerButton_Xpath));
+		driver.findElement(By.xpath(LoginPageWapObject.registerButton_Xpath)).click();
+		log("click on [register] button", ILogLevel.METHOD);
+	}
+	
 
 }

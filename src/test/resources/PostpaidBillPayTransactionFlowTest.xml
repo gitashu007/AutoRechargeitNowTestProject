@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test Postpaid bill pay transaction flow">
+
+	<test name="Postpaid bill pay flow : Scenario_1" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_couponScen1" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_2" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponRINcashScen2" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_3" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPromoRINcashScen3" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_4" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPromoRINcashPGScen4" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_6" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPromoPGScen6" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_7" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPDCPromoPGScen7" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_8" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponRINcashPGScen8" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_9" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPDCRINcashPGScen9" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_10" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponRincashPromoPDCScen10" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_12" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINcashScen12" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_13" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINPromoScen13" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_14" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINPGScen14" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_15" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINcashPDCScen15" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_16" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponRINcashPDCScen16" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_17" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINcashPromoPGScen17" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_18" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINcashPromoPDCScen18" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_19" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_PDCRINcashPGScen19" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_20" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_PromoPGScen20" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+</suite>

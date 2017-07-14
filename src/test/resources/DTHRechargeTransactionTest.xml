@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test DTH recharge transaction flow">
+
+	<test name="DTH recharge flow : Scenario_4" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponPromoRINcashPGScen4" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_6" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPromoPGScen6" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_7" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponPDCPromoPGScen7" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_8" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponRINcashPGScen8" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_9" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponPDCRINcashPGScen9" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_14" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_RINPGScen14" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_17" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_RINcashPromoPGScen17" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_19" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_PDCRINcashPGScen19" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="DTH recharge flow : Scenario_20" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_PromoPGScen20" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+
+</suite>

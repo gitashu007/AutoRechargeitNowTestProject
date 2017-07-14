@@ -32,12 +32,16 @@ public class HomePageWap extends BaseClass{
 		
 	}
 	public void clickLuckyDrawCrossIcon2(){
-		pause(10);
+		pause(55);
 		boolean luckyBanner = isElementPresent(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath));
 		if(luckyBanner){
 			 driver.findElement(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath)).click();
-			 log("click on [X] icon of lucky draw", ILogLevel.METHOD);
+			 log("click on [close] icon of download app banner", ILogLevel.METHOD);
 		}
+	}
+	public void getPageSource(){
+		String pageSource = driver.getPageSource();
+		System.out.println(pageSource);
 	}
 	
 	public void clickRINLogo(){

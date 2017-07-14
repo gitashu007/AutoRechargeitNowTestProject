@@ -169,5 +169,10 @@ public class LandingPageWap extends BaseClass{
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
 	}
+	public void enterSunDirectNumber(String _subscriberId){
+		waitForElementDisplayed(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id));
+		driver.findElement(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id)).sendKeys(_subscriberId);
+		log("enter [Sundirect Number]", ILogLevel.METHOD);
+		}
 
 }
