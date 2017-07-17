@@ -105,8 +105,6 @@ public class TestCore extends Page{
 
 					log("----------- Launching Chrome Browser -------------", ILogLevel.TESTCASE);
 
-					driver.get(config.getProperty("site_url"));
-
 				}
 
 			}
@@ -116,13 +114,17 @@ public class TestCore extends Page{
 			log("You Selected Wrong Platform, Please Select Either \"Android or Portal\" ", ILogLevel.ERROR);
 		}
 
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp(Method method) throws IOException, InterruptedException, MalformedURLException {
+		
+		if(config.getProperty("Application_Type").toLowerCase().equals("wap")){
+			
+			driver.get(config.getProperty("site_url"));
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+		}
 
 		log("--------------------------------------------------------", ILogLevel.TESTCASE);
 		log("---------Test ["+method.getName()+"] Started------------", ILogLevel.TESTCASE);

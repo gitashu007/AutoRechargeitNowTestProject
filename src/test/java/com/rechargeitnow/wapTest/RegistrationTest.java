@@ -28,6 +28,7 @@ public class RegistrationTest extends TestCore{
 		registerPage.selectTermsCheckbox();
 		registerPage.clickRegisterSubmitButton();
 		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "User is not registered yet");
+		registerPage.clickLogoutButton();
 	}
 
 }

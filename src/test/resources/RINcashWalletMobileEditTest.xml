@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test RINcash Wallet Edit Mobile Number">
+
+	<test name="RINcash Wallet edit mobile test with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINCashMobileEdit_WithValidInputs" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

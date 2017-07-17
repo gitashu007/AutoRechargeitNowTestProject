@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test Registration Flow">
+
+	<test name="test Registration flow with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testRegistrationWithValidDetails" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

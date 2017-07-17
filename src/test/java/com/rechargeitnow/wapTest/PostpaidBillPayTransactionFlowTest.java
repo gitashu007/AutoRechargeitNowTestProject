@@ -54,7 +54,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=1)
 	public void testPostpaidBillPayFlow_CouponRINcashScen2(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -97,7 +96,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=2)
 	public void testPostpaidBillPayFlow_CouponPromoRINcashScen3(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -143,7 +141,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=3)
 	public void testPostpaidBillPayFlow_CouponPromoRINcashPGScen4(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -188,6 +185,8 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+		
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
@@ -200,7 +199,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=4)
 	public void testPostpaidBillPayFlow_CouponPromoPGScen6(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -242,6 +240,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -254,7 +253,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=5)
 	public void testPostpaidBillPayFlow_CouponPDCPromoPGScen7(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -294,6 +292,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -307,7 +306,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=6)
 	public void testPostpaidBillPayFlow_CouponRINcashPGScen8(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -349,6 +347,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -361,7 +360,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=7)
 	public void testPostpaidBillPayFlow_CouponPDCRINcashPGScen9(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -401,6 +399,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -413,7 +412,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=8)
 	public void testPostpaidBillPayFlow_CouponRincashPromoPDCScen10(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();
 
@@ -457,7 +455,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=9)
 	public void testPostpaidBillPayFlow_RINcashScen12(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -497,7 +494,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=10)
 	public void testPostpaidBillPayFlow_RINPromoScen13(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -540,7 +536,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=11)
 	public void testPostpaidBillPayFlow_RINPGScen14(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -580,6 +575,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -591,7 +587,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=12)
 	public void testPostpaidBillPayFlow_RINcashPDCScen15(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -632,7 +627,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=13)
 	public void testPostpaidBillPayFlow_CouponRINcashPDCScen16(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -676,7 +670,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=14)
 	public void testPostpaidBillPayFlow_RINcashPromoPGScen17(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -719,6 +712,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -731,7 +725,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=15)
 	public void testPostpaidBillPayFlow_RINcashPromoPDCScen18(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -771,7 +764,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=16)
 	public void testPostpaidBillPayFlow_PDCRINcashPGScen19(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -809,6 +801,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -820,7 +813,6 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	@Test(priority=17)
 	public void testPostpaidBillPayFlow_PromoPGScen20(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -860,6 +852,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");

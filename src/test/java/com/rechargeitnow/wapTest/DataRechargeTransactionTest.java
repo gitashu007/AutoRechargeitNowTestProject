@@ -58,6 +58,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -69,7 +70,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=1)
 	public void testDataRechargeFlow_PGScen22(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -105,6 +105,8 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+		
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
@@ -115,7 +117,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=2)
 	public void testDataRechargeFlow_CouponPGScen23(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -157,6 +158,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -169,7 +171,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=3)
 	public void testDataRechargeFlow_PGandPDCScen24(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -207,6 +208,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -217,7 +219,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=4)
 	public void testDataRechargeFlow_CouponPDCandPGScen25(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -257,6 +258,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -268,7 +270,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=5)
 	public void testDataRechargeFlow_CpnPDCPromoRINandPGScen26(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -314,6 +315,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
@@ -325,7 +327,6 @@ public class DataRechargeTransactionTest extends TestCore{
 	@Test(priority=6)
 	public void testDataRechargeFlow_RINcashPGPromoAndPDCScen31(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 
@@ -369,6 +370,7 @@ public class DataRechargeTransactionTest extends TestCore{
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");

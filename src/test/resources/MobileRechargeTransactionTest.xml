@@ -181,5 +181,75 @@
 			</class>
 		</classes>
 	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_21" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_PDCPromoPGScen21" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_22" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_PGScen22" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_23" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPGScen23" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_24" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_PGandPDCScen24" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_25" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CouponPDCandPGScen25" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_26" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_CpnPDCPromoRINandPGScen26" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Mobile recharge flow : Scenario_31" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
+				<methods>
+					<include name="testMobileRechargeFlow_RINcashPGPromoAndPDCScen31" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
 
 </suite> <!-- Suite -->

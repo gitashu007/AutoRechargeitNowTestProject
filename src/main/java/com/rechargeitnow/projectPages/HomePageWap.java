@@ -3,6 +3,7 @@ package com.rechargeitnow.projectPages;
 import org.openqa.selenium.By;
 
 import com.rechargeitnow.pageObject.HomePageWapObject;
+import com.rechargeitnow.pageObject.MyAccountPageWapObject;
 import com.rechargeitnow.pageObject.ReceiptPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
@@ -61,6 +62,11 @@ public class HomePageWap extends BaseClass{
 			driver.findElement(By.xpath(HomePageWapObject.logoLink_Xpath2)).click();
 			log("click on [RIN Logo] link ", ILogLevel.METHOD);
 		}
+	}
+	public void clickMyAccountButton(){
+		waitForElementDisplayed(By.linkText(HomePageWapObject.myAccountButton_LinkText));
+		driver.findElement(By.linkText(HomePageWapObject.myAccountButton_LinkText)).click();
+		log("click on [my account] button", ILogLevel.METHOD);
 	}
 	
 	

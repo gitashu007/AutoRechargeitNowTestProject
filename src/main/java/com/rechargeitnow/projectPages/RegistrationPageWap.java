@@ -2,6 +2,7 @@ package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
 
+import com.rechargeitnow.pageObject.LoginPageWapObject;
 import com.rechargeitnow.pageObject.RegistrationPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
@@ -68,6 +69,10 @@ public class RegistrationPageWap extends BaseClass {
 		driver.findElement(By.id(RegistrationPageWapObject.submitButton_Id)).click();
 		log("click on [Submit] button",ILogLevel.METHOD);
 	}
-	
+	public void clickLogoutButton(){
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.logoutButtonField_xpath));
+		driver.findElement(By.xpath(LoginPageWapObject.logoutButtonField_xpath)).click();
+		log("click on [Logout] button",ILogLevel.METHOD);
+	}
 
 }
