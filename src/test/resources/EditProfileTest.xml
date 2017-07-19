@@ -11,4 +11,35 @@
 			</class>
 		</classes>
 	</test> <!-- Test -->
+	
+	<test name="test Edit profile with blank input fields" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.EditProfileTest">
+				<methods>
+					<include name="testEditProfile_WithBlankInputFields" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Edit profile with mobile no less than 10" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.EditProfileTest">
+				<methods>
+					<include name="testtestEditProfile_WithMobileNoLessThan10" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Edit profile with less than 6 digits in pin number" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.EditProfileTest">
+				<methods>
+					<include name="testtestEditProfile_WithPinLessThan6" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
 	</suite>

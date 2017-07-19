@@ -13,6 +13,11 @@ public class EditWalletDetailsPageWapObject {
 	public static String pinProceedButton_Xpath = "//button[@onclick='submitPinRequest();']";
 	public static String confirmPinText_Xpath = "//strong[contains(text(), 'Congratulations')]";
 	public static String confirmOKButton_Xpath = "//button[@onclick='showwallethistory();']";
+	public static String currentMobNo_Xpath = "//*[@id='strCurMobileNo']";
+	public static String validationText_Xpath = "//*[@id='error1']";
+	public static String editMobValidationText_Id = "edit_mobile";
+	public static String pinValidation_Xpath = "//*[@id='error']";
+	public static String pinValidationMessageUp_Id = "edit_pin";
 	
 
 }

@@ -99,6 +99,7 @@ public class TestCore extends Page{
 					capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, config.getProperty("Platform_Name"));
 					capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, config.getProperty("Device_Name"));
 					capabilities.setCapability(MobileCapabilityType.VERSION,config.getProperty("Android_Version"));
+					capabilities.setCapability("newCommandTimeout", 60 * 5);
 					capabilities.setCapability("chromedriverExecutable", app.getAbsolutePath());
 
 					driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);

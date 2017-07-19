@@ -2,6 +2,66 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="To test RINcash Wallet Edit Mobile Number">
 
+   <test name="RINcash Wallet edit mobile test with blank input in new Mobile No" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithBlankMobileNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit mobile test with Blank Pin no" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithBlankPinNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit mobile test with Duplicate mobile no" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithCurrentMobileNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit mobile test with existing mobile no" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithExistingMobileNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit mobile test with invalid pin" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithInvalidPin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit mobile test with less than 10 digits" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
+				<methods>
+					<include name="testRINcashMobileEdit_WithLessThan10DigitMobNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
 	<test name="RINcash Wallet edit mobile test with valid inputs" enabled="true">
 		<classes>
 			<class name="com.rechargeitnow.wapTest.RINcashWalletMobileEditTest">
@@ -11,4 +71,4 @@
 			</class>
 		</classes>
 	</test> <!-- Test -->
-	</suite>
+</suite>

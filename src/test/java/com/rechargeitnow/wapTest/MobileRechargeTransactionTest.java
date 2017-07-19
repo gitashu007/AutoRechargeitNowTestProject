@@ -772,7 +772,6 @@ public class MobileRechargeTransactionTest extends TestCore{
 	@Test(priority=15)
 	public void testMobileRechargeFlow_RINcashPromoPDCScen18(){
 		HomePageWap homePage = new HomePageWap(driver);
-		homePage.clickRINLogo();
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
 

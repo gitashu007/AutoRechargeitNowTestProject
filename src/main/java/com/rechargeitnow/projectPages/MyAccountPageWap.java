@@ -37,5 +37,11 @@ public class MyAccountPageWap extends BaseClass{
 		driver.findElement(By.xpath(MyAccountPageWapObject.RINcashWalletButton_Xpath)).click();
 		log("click on [RINcash Wallet] button", ILogLevel.METHOD);
 	}
+	
+	public void clickLogoutIcon(){
+		waitForElementDisplayed(By.xpath(MyAccountPageWapObject.logoutIcon_Xpath));
+		driver.findElement(By.xpath(MyAccountPageWapObject.logoutIcon_Xpath)).click();
+		log("click on [logout] icon",ILogLevel.METHOD);
+	}
 
 }

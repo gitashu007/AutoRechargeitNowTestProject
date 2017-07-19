@@ -9,6 +9,10 @@ import com.rechargeitnow.pages.ILogLevel;
 
 import io.appium.java_client.AppiumDriver;
 
+/**
+ * @author New
+ *
+ */
 public class RegistrationPageWap extends BaseClass {
 
 	public RegistrationPageWap(AppiumDriver driver) {
@@ -16,8 +20,8 @@ public class RegistrationPageWap extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 	
-	String _mobile = "9899"+AutogenerateNumber(6);
-	String _email = "rinuser"+AutogenerateNumber(5)+"@mailinator.com";
+	public String _mobile = "9899"+AutogenerateNumber(6);
+	public String _email = "rinuser"+AutogenerateNumber(5)+"@mailinator.com";
 	
 	public boolean isRegisterFormAppears(){
 		waitForElementDisplayed(By.xpath(RegistrationPageWapObject.registerTab_Xpath));
@@ -33,27 +37,31 @@ public class RegistrationPageWap extends BaseClass {
 		log("enter [Name]",ILogLevel.METHOD);
 	}
 	
-	public void enterMobileNo(){
+	public void enterMobileNo(String _regMobile){
 		waitForElementDisplayed(By.id(RegistrationPageWapObject.mobileNoField_Id));
-		driver.findElement(By.id(RegistrationPageWapObject.mobileNoField_Id)).sendKeys(_mobile);
+		driver.findElement(By.id(RegistrationPageWapObject.mobileNoField_Id)).clear();
+		driver.findElement(By.id(RegistrationPageWapObject.mobileNoField_Id)).sendKeys(_regMobile);
 		log("enter [Mobile]",ILogLevel.METHOD);
 	}
 	
 	
-	public void enterEmailId(){
+	public void enterEmailId(String regEmail){
 		waitForElementDisplayed(By.id(RegistrationPageWapObject.emailField_Id));
-		driver.findElement(By.id(RegistrationPageWapObject.emailField_Id)).sendKeys(_email);
+		driver.findElement(By.id(RegistrationPageWapObject.emailField_Id)).clear();
+		driver.findElement(By.id(RegistrationPageWapObject.emailField_Id)).sendKeys(regEmail);
 		log("enter [email]",ILogLevel.METHOD);
 	}
 	
 	public void enterPassword(String _pass){
 		waitForElementDisplayed(By.id(RegistrationPageWapObject.passwordField_Id));
+		driver.findElement(By.id(RegistrationPageWapObject.passwordField_Id)).clear();
 		driver.findElement(By.id(RegistrationPageWapObject.passwordField_Id)).sendKeys(_pass);
 		log("enter [password]",ILogLevel.METHOD);
 	}
 	
 	public void enterConfirmPassword(String _pass){
 		waitForElementDisplayed(By.id(RegistrationPageWapObject.confirmPassword_Id));
+		driver.findElement(By.id(RegistrationPageWapObject.confirmPassword_Id)).clear();
 		driver.findElement(By.id(RegistrationPageWapObject.confirmPassword_Id)).sendKeys(_pass);
 		log("enter [Confirm password]",ILogLevel.METHOD);
 	}
@@ -74,5 +82,15 @@ public class RegistrationPageWap extends BaseClass {
 		driver.findElement(By.xpath(LoginPageWapObject.logoutButtonField_xpath)).click();
 		log("click on [Logout] button",ILogLevel.METHOD);
 	}
+	
+	public boolean isValidationPresent(String _expectedValidation){
+		waitForElementDisplayed(By.id(RegistrationPageWapObject.regValidationText_Id));
+		String validation = driver.findElement(By.id(RegistrationPageWapObject.regValidationText_Id)).getText();
+		if(validation.equals(_expectedValidation)){
+			return true;
+		}return false;
+	}
+
+	
 
 }

@@ -2,6 +2,46 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="To test RINcash Wallet Edit Pin Number">
 
+	<test name="RINcash Wallet edit Pin test with blank Pin inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletPinEditTest">
+				<methods>
+					<include name="testRINcashWalletPinEdit_WithBlankPinField" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit Pin test with different new and confirm Pin inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletPinEditTest">
+				<methods>
+					<include name="testRINcashWalletPinEdit_WithDifferentInputNewAndConfirmPin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit Pin test with less than 4 digits new and confirm inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletPinEditTest">
+				<methods>
+					<include name="testRINcashWalletPinEdit_WithShortNewAndConfirmPin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="RINcash Wallet edit Pin test with same inputs in all fields" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RINcashWalletPinEditTest">
+				<methods>
+					<include name="testRINcashWalletPinEdit_WithSameInputAllFields" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
 	<test name="RINcash Wallet edit Pin test with valid inputs" enabled="true">
 		<classes>
 			<class name="com.rechargeitnow.wapTest.RINcashWalletPinEditTest">

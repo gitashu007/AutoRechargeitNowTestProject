@@ -1,10 +1,12 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import com.rechargeitnow.pageObject.EditWalletDetailsPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
+import com.rechargeitnow.pages.TestCore;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -13,9 +15,9 @@ public class EditWalletDetailsPageWap extends BaseClass{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
-	String _newMobileNo = "9015"+AutogenerateNumber(6);
-	String currentMobileNumber= " ";
+	String expectedNumber = TestCore.config.getProperty("New_MobileNo");
+	String randomMobileNo = "9015"+AutogenerateNumber(6);
+
 	public void clickEditMobileNoTab(){
 		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.editMobileNoTab_Xpath));
 		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.editMobileNoTab_Xpath)).click();
@@ -26,19 +28,36 @@ public class EditWalletDetailsPageWap extends BaseClass{
 		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.editPinTab_Xpath)).click();
 		log("click on [Edit Pin No.] button", ILogLevel.METHOD);
 	}
-	
+
 	public void enterNewMobileNo(){
-		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.currentMobileNumberText_Xpath));
-		currentMobileNumber = driver.findElement(By.xpath(EditWalletDetailsPageWapObject.currentMobileNumberText_Xpath)).getText();
-		System.out.println("Current Mobile No. is "+currentMobileNumber);
-		
-		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath));
-		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(_newMobileNo);
-		log("enter [New Mobile Number]", ILogLevel.METHOD);
+		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.currentMobNo_Xpath));
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		String actualOldNumber = (String) jse.executeScript("return arguments[0].value;",driver.findElement(By.xpath(EditWalletDetailsPageWapObject.currentMobNo_Xpath)));
+		if(actualOldNumber.trim().equals(expectedNumber.trim())){
+			driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(randomMobileNo);
+			log("New Mobile Number is equal to current mobile no. So, random number['"+randomMobileNo+"'] is entered", ILogLevel.METHOD);
+		}
+		else{
+			driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(expectedNumber);
+			log("enter ['"+expectedNumber+"']", ILogLevel.METHOD);
+		}
+
 	}
-	public void enterOldMobileNo(){
+	public void enterDuplicateMobileNo(){
+		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.currentMobNo_Xpath));
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		String actualOldNumber = (String) jse.executeScript("return arguments[0].value;",driver.findElement(By.xpath(EditWalletDetailsPageWapObject.currentMobNo_Xpath)));
+		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(actualOldNumber);
+		log("enter [duplicate] mobile no.", ILogLevel.METHOD);
+	}
+	public void enterMobileNo(String _mobNo){
+		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.currentMobNo_Xpath));
+		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(_mobNo);
+		log("enter [Existing] mobile no", ILogLevel.METHOD);
+	}
+	public void enterOldMobileNo(String currentMobileNo){
 		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath));
-		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(currentMobileNumber);
+		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.newMobileNoField_Xpath)).sendKeys(currentMobileNo);
 		log("enter [old Mobile Number]", ILogLevel.METHOD);
 	}
 	public void enterPinNumber(String _pin){
@@ -46,7 +65,7 @@ public class EditWalletDetailsPageWap extends BaseClass{
 		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.pinNumberField_Xpath)).sendKeys(_pin);
 		log("enter [Pin Number]", ILogLevel.METHOD);
 	}
-	
+
 	public void clickProceedButton(){
 		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.proceedButton_Xpath));
 		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.proceedButton_Xpath)).click();
@@ -83,6 +102,35 @@ public class EditWalletDetailsPageWap extends BaseClass{
 		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.confirmOKButton_Xpath));
 		driver.findElement(By.xpath(EditWalletDetailsPageWapObject.confirmOKButton_Xpath)).click();
 		log("click on [OK] button", ILogLevel.METHOD);
+	}
+	public boolean verifyMobileNoValidation(String _expectedMessage){
+		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.validationText_Xpath));
+		String errorMessage = driver.findElement(By.xpath(EditWalletDetailsPageWapObject.validationText_Xpath)).getText();
+		if(errorMessage.equals(_expectedMessage)){
+			return true;
+		}return false;
+	}
+	public boolean verifyEditMobileValidation(String _expectedMessage){
+		waitForElementDisplayed(By.id(EditWalletDetailsPageWapObject.editMobValidationText_Id));
+		String errorMessage = driver.findElement(By.id(EditWalletDetailsPageWapObject.editMobValidationText_Id)).getText();
+		if(errorMessage.equals(_expectedMessage)){
+			return true;
+		}return false;
+	}
+	public boolean verifyPinValidation(String _expectedMessage){
+		waitForElementDisplayed(By.xpath(EditWalletDetailsPageWapObject.pinValidation_Xpath));
+		String errorMessage = driver.findElement(By.xpath(EditWalletDetailsPageWapObject.pinValidation_Xpath)).getText();
+		if(errorMessage.equals(_expectedMessage)){
+			return true;
+		}return false;
+	}
+	
+	public boolean verifyEditPinValidation(String _expectedMessage){
+		waitForElementDisplayed(By.id(EditWalletDetailsPageWapObject.pinValidationMessageUp_Id));
+		String errorMessage = driver.findElement(By.id(EditWalletDetailsPageWapObject.pinValidationMessageUp_Id)).getText();
+		if(errorMessage.equals(_expectedMessage)){
+			return true;
+		}return false;
 	}
 
 }

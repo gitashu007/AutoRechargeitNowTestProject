@@ -16,6 +16,7 @@ public class ViewProfilePageWap extends BaseClass{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
+	public String _mobile = "9015"+AutogenerateNumber(6);
 
 	public boolean isViewEditPageOpened(){
 		waitForElementDisplayed(By.xpath(ViewProfilePageWapObject.personalDetailsText_Xpath));
@@ -62,11 +63,10 @@ public class ViewProfilePageWap extends BaseClass{
 		log("Select ["+_age+"] in Age field",ILogLevel.METHOD);
 	}
 	
-    String _mobile = "9890"+AutogenerateNumber(6);
-	public void enterMobileNumber(){
+	public void enterMobileNumber(String _profileMobile){
 		waitForElementDisplayed(By.id(ViewProfilePageWapObject.mobileNoField_Id));
 		driver.findElement(By.id(ViewProfilePageWapObject.mobileNoField_Id)).clear();
-		driver.findElement(By.id(ViewProfilePageWapObject.mobileNoField_Id)).sendKeys(_mobile);;
+		driver.findElement(By.id(ViewProfilePageWapObject.mobileNoField_Id)).sendKeys(_profileMobile);;
 		log("enter [Mobile Number]",ILogLevel.METHOD);
 	}
 	
@@ -101,6 +101,29 @@ public class ViewProfilePageWap extends BaseClass{
 		driver.findElement(By.id(ViewProfilePageWapObject.saveChangesButton_id)).click();
 		log("click on [Save Changes] button",ILogLevel.METHOD);
 	}
+	
+	public void clearFirstNameField(){
+		waitForElementDisplayed(By.id(ViewProfilePageWapObject.firstNameField_Id));
+		driver.findElement(By.id(ViewProfilePageWapObject.firstNameField_Id)).clear();
+	}
+	public void clearLastNameField(){
+		waitForElementDisplayed(By.id(ViewProfilePageWapObject.lastNameField_Id));
+		driver.findElement(By.id(ViewProfilePageWapObject.lastNameField_Id)).clear();
+	}
+	public void clearMobNoField(){
+		waitForElementDisplayed(By.id(ViewProfilePageWapObject.mobileNoField_Id));
+		driver.findElement(By.id(ViewProfilePageWapObject.mobileNoField_Id)).clear();
+	}
+	public void clearAddressField(){
+		waitForElementDisplayed(By.id(ViewProfilePageWapObject.addressField_Id));
+		driver.findElement(By.id(ViewProfilePageWapObject.addressField_Id)).clear();
+	}
+	public void clearPinNoField(){
+		waitForElementDisplayed(By.id(ViewProfilePageWapObject.pinNumber_Id));
+		driver.findElement(By.id(ViewProfilePageWapObject.pinNumber_Id)).clear();
+	}
+	
+	
 
 
 }

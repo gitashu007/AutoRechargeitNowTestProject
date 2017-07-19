@@ -4,10 +4,14 @@
 
 	<!-- Recharge & Bill pay transaction flow -->
 	<suite-files>
+		<suite-file path=".//src/test/resources/RegistrationTest.xml"></suite-file>
 		<suite-file path=".//src/test/resources/LoginTest.xml"></suite-file>
 		<suite-file path=".//src/test/resources/MobileRechargeTransactionTest.xml"></suite-file>
 		<suite-file path=".//src/test/resources/DataRechargeTransactionTest.xml"></suite-file>
 		<suite-file path=".//src/test/resources/DTHRechargeTransactionTest.xml"></suite-file>
 		<suite-file path=".//src/test/resources/PostpaidBillPayTransactionFlowTest.xml"></suite-file>
+		<suite-file path=".//src/test/resources/EditProfileTest.xml"></suite-file>
+		<suite-file path=".//src/test/resources/RINcashWalletMobileEditTest"></suite-file>
+		<suite-file path=".//src/test/resources/RINcashWalletPinEditTest"></suite-file>
 	</suite-files>
 </suite>

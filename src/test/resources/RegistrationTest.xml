@@ -2,6 +2,56 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="To test Registration Flow">
 
+	<test name="test Registration flow with blank inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testRegistrationWithBlankFields" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Registration flow with invalid Mobile No" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testregisteration_WithInvalidMobNo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Registration flow with invlid email id" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testregisteration_WithInvalidEmailId" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Registration flow with less than 6 characters in Password field" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testregisteration_WithLessThan6CharPassword" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="test Registration flow with different inputs in password and confirm password fields" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.RegistrationTest">
+				<methods>
+					<include name="testregisteration_WithDiffInputPwdAndConfirmPwd" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
 	<test name="test Registration flow with valid inputs" enabled="true">
 		<classes>
 			<class name="com.rechargeitnow.wapTest.RegistrationTest">
