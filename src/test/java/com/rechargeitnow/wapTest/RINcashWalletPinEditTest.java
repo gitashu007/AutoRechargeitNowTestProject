@@ -184,8 +184,8 @@ public class RINcashWalletPinEditTest extends TestCore {
 		editWalletPage.enterNewPin(config.getProperty("New_Pin"));
 		editWalletPage.enterConfirmPin(config.getProperty("New_Pin"));
 		editWalletPage.clickPinProceedButton();
-		//Assert.assertTrue(editWalletPage.isPinChanged(), "No confirmation message appears");
-		//editWalletPage.clickOKButton();
+		Assert.assertTrue(editWalletPage.isPinChanged(), "No confirmation message appears");
+		editWalletPage.clickOKButton();
 		Assert.assertTrue(rincashPage.isRINcashWalletPageOpened(), "RINcash page is not opened");
 		rincashPage.clickEditDetailsButton();
 		editWalletPage.clickEditPinNoTab();
@@ -193,8 +193,8 @@ public class RINcashWalletPinEditTest extends TestCore {
 		editWalletPage.enterNewPin(config.getProperty("RIN_Pin"));
 		editWalletPage.enterConfirmPin(config.getProperty("RIN_Pin"));
 		editWalletPage.clickPinProceedButton();
-		//Assert.assertTrue(editWalletPage.isPinChanged(), "No confirmation message appears");
-		//editWalletPage.clickOKButton();
+		Assert.assertTrue(editWalletPage.isPinChanged(), "No confirmation message appears");
+		editWalletPage.clickOKButton();
 		Assert.assertTrue(rincashPage.isRINcashWalletPageOpened(), "RINcash page is not opened");
 		rincashPage.switchParentWindow1();
 		rincashPage.switchParentWindow1();
