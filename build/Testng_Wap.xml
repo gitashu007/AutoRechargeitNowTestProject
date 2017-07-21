@@ -2,16 +2,49 @@
 
 <suite name='Wap recharge transaction flow test' verbose='10'>
 
-	<!-- Recharge & Bill pay transaction flow -->
+	<!-- Recharge & Bill pay transaction flow Test Suite-files -->
 	<suite-files>
+		<!-- Registration Test suite file -->
 		<suite-file path=".//src/test/resources/RegistrationTest.xml"></suite-file>
+
+		<!-- Login Test suite file -->
 		<suite-file path=".//src/test/resources/LoginTest.xml"></suite-file>
+
+		<!-- Facebook Login Test suite file -->
+		<!-- <suite-file path=".//src/test/resources/FacebookLoginTest.xml"></suite-file> -->
+
+		<!-- Yahoo Login Test suite file -->
+		<suite-file path=".//src/test/resources/YahooLoginTest.xml"></suite-file>
+
+		<!-- Google Plus Login Test suite file -->
+		<suite-file path=".//src/test/resources/GooglePlusLoginTest.xml"></suite-file>
+
+		<!-- LinkedIn Login Test suite file -->
+		<suite-file path=".//src/test/resources/LinkedInloginTest.xml"></suite-file>
+
+		<!-- Mobile Recharge Transactions Test suite file -->
 		<suite-file path=".//src/test/resources/MobileRechargeTransactionTest.xml"></suite-file>
+
+		<!-- Data Recharge Transactions Test suite file -->
 		<suite-file path=".//src/test/resources/DataRechargeTransactionTest.xml"></suite-file>
+
+		<!-- DTH Recharge Transactions Test suite file -->
 		<suite-file path=".//src/test/resources/DTHRechargeTransactionTest.xml"></suite-file>
+
+		<!-- Postpaid Bill Pay Transactions Test suite file -->
 		<suite-file path=".//src/test/resources/PostpaidBillPayTransactionFlowTest.xml"></suite-file>
+
+		<!-- Edit Profile Test suite file -->
 		<suite-file path=".//src/test/resources/EditProfileTest.xml"></suite-file>
-		<suite-file path=".//src/test/resources/RINcashWalletMobileEditTest"></suite-file>
-		<suite-file path=".//src/test/resources/RINcashWalletPinEditTest"></suite-file>
+
+		<!-- RINcash Mobile Edit Test suite file -->
+		<suite-file path=".//src/test/resources/RINcashWalletMobileEditTest.xml"></suite-file>
+
+		<!-- RINcash Wallet Pin Edit Test suite file -->
+		<suite-file path=".//src/test/resources/RINcashWalletPinEditTest.xml"></suite-file>
+
+		<!-- Change Password Test suite file -->
+		<suite-file path=".//src/test/resources/ChangePasswordTest.xml"></suite-file>
+
 	</suite-files>
 </suite>
