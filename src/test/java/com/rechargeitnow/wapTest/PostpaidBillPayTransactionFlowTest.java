@@ -46,7 +46,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 	    Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-	    Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+	    Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 	    Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 	    Assert.assertTrue(receiptPage.verifyCouponValue(), "verification of Coupon is failed");
 	}
@@ -86,7 +86,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("15"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("5"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValue(), "Coupon value is not applied ");
@@ -130,7 +130,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("15"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("4"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.isPromoDiscountDisplayed("1"), "Promo amount are not displayed");
@@ -184,13 +184,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 		
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 
@@ -239,13 +240,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 	}
@@ -291,13 +293,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 	
@@ -346,13 +349,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 	}
@@ -398,13 +402,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
 	}
@@ -445,7 +450,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("15"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("14"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.isPromoDiscountDisplayed("1"), "Promo discount is not displayed");
@@ -485,7 +490,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("10"), "RINcash points are not displayed");
 
@@ -526,7 +531,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("9"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.isPromoDiscountDisplayed("1"), "Promo discount is not displayed");
@@ -574,13 +579,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 	}
 
@@ -619,7 +625,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("20"), "RINcash points are not displayed");
 	}
@@ -661,7 +667,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("15"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("15"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.verifyReceiptCouponValue(), "Coupon value is not shown");
@@ -711,13 +717,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 		
 	}
@@ -756,7 +763,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		receiptPage.clickHereToStopLink();
 		Assert.assertTrue(receiptPage.isOrderIdPresent(), "Order id is not present on receipt");
-		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Mobile_Number")),"Mobile no. is different on receipt page");
+		Assert.assertTrue(receiptPage.isMobileNoSame(config.getProperty("Postpaid_MobileNumber")),"Mobile no. is different on receipt page");
 		Assert.assertTrue(receiptPage.isRechargeAmountSame("10"), "Recharge amount is different on receipt page");
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("19"), "RINcash points are not displayed");
 	}
@@ -800,13 +807,14 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 	}
 	
@@ -851,13 +859,363 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
 		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+	}
+	@Test(priority=18)
+	public void testPostpaidBillPayFlow_PDCPromoPGScen21(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("10");
+		rechargeAmountPage.clickProceedButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("10"), "Payable amount is wrong on payment page");
+		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
+		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No confirmation message appears");
+
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(summaryPage.isPDCapplied(), "Partner Discount Coupon is not applied");
+		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo is not applied");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("19"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+
+	}
+	@Test(priority=19)
+	public void testPostpaidBillPayFlow_PGScen22(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount(config.getProperty("Recharge_Amount"));
+		rechargeAmountPage.clickProceedButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountCorrect(), "Recharge amount is wrong on payment page");
+		paymentPage.clickPDCCheckBox();
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+		paymentPage.clickPDCProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+		
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+
+	}
+	@Test(priority=20)
+	public void testPostpaidBillPayFlow_CouponPGScen23(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("15");
+		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
+		rechargeAmountPage.clickProceedButton();
+		rechargeAmountPage.clickYesRadioButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("5"), "Payable amount is wrong on payment page");
+		paymentPage.clickPDCCheckBox();
+
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentData("5"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
+		paymentPage.clickPDCProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
+	}
+
+	@Test(priority=21)
+	public void testPostpaidBillPayFlow_PGandPDCScen24(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("10");
+		rechargeAmountPage.clickProceedButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("10"), "Payable amount is wrong on payment page");
+
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("20"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+	}
+	@Test(priority=22)
+	public void testPostpaidBillPayFlow_CouponPDCandPGScen25(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("15");
+		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
+		rechargeAmountPage.clickProceedButton();
+		rechargeAmountPage.clickYesRadioButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("5"), "Payable amount is wrong on payment page");
+
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("15"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+	}
+	
+	@Test(priority=23)
+	public void testPostpaidBillPayFlow_CpnPDCPromoRINandPGScen26(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("15");
+		rechargeAmountPage.applyCouponCode(config.getProperty("Coupon_No"), config.getProperty("Coupon_Amount"), config.getProperty("Coupon_Code"));
+		rechargeAmountPage.clickProceedButton();
+		rechargeAmountPage.clickYesRadioButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("5"), "Payable amount is wrong on payment page");
+		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
+		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No Promo confirmation is shown");
+		paymentPage.enterRINcashAmount("1");
+		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
+		
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
+		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo verification is failed");
+		Assert.assertTrue(summaryPage.isappliedRINcashDisplayedData(), "Verification of RINcash amount is failed");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentData2("13"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
+		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+		Assert.assertTrue(receiptPage.verifyReceiptCouponValueLoc3(), "Coupon value is not applied ");
+	}
+	@Test(priority=24)
+	public void testPostpaidBillPayFlow_RINcashPGPromoAndPDCScen31(){
+		HomePageWap homePage = new HomePageWap(driver);
+		homePage.clickLuckyDrawCrossIcon();
+		homePage.clickLoginButton();
+
+		LoginPageWap loginPage = new LoginPageWap(driver);
+		loginPage.enterEmailId(config.getProperty("emailId"));
+		loginPage.enterPassword(config.getProperty("password"));
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+
+		LandingPageWap landingPage = new LandingPageWap(driver);
+		landingPage.clickRechargeTypeButton("postpaid bill pay");
+		landingPage.selectPostpaidOperator(config.getProperty("Postpaid_Operator"));
+		landingPage.enterPostpaidMobileNo(config.getProperty("Postpaid_MobileNumber"));
+		landingPage.clickPostpaidSubmitButton();
+
+		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
+		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Postpaid_MobileNumber")), "Mobile number is wrong on recharge amount page");
+		rechargeAmountPage.enterRechargeAmount("10");
+		rechargeAmountPage.clickProceedButton();
+
+		PaymentPageWap paymentPage = new PaymentPageWap(driver);
+		Assert.assertTrue(paymentPage.isRechargeAmountExpected("10"), "Payable amount is wrong on payment page");
+		paymentPage.applyPromoCode(config.getProperty("Promo_Code"));
+		Assert.assertTrue(paymentPage.isConfirmationAppears(), "No Promo confirmation is shown");
+		paymentPage.enterRINcashAmount("1");
+		paymentPage.enterRINPin(config.getProperty("RIN_Pin"));
+		
+		SummaryPageWap summaryPage = new SummaryPageWap(driver);
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
+		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo verification is failed");
+		Assert.assertTrue(summaryPage.isappliedRINcashDisplayedData(), "Verification of RINcash amount is failed");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentData2("18"), "Payable amount is not shown");
+		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+		paymentPage.clickProceedButton();
+
+		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
+		pg.clickRINUrl();
+		homePage.clickLuckyDrawCrossIcon2();
+
+		ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
+		Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
+		Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
+		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Postpaid_MobileNumber")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 	}
 	

@@ -182,4 +182,74 @@
 		</classes>
 	</test> <!-- Test -->
 	
+	<test name="Postpaid bill pay flow : Scenario_21" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_PDCPromoPGScen21" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_22" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_PGScen22" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_23" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPGScen23" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_24" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_PGandPDCScen24" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_25" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CouponPDCandPGScen25" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_26" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_CpnPDCPromoRINandPGScen26" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Postpaid bill pay flow : Scenario_31" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.PostpaidBillPayTransactionFlowTest">
+				<methods>
+					<include name="testPostpaidBillPayFlow_RINcashPGPromoAndPDCScen31" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
 </suite>

@@ -16,14 +16,26 @@ public class PaymentGatewayPage extends BaseClass {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public void clickRINUrl(){
-        pause(2);
+		pause(2);
 		waitForElementDisplayed(By.linkText(PaymentGatewayPageObject.rinUrl_LinkText));
 		driver.findElement(By.linkText(PaymentGatewayPageObject.rinUrl_LinkText)).click();
 		log("click on [www.rechargeitnow.com] link to fail transaction", ILogLevel.METHOD);
 	}
-	
-	
+	public void getPageSource(){
+		String source = driver.getPageSource();
+		System.out.println(source);
+
+	}
+	public void clickUseNewCard(){
+		waitForElementDisplayed(By.linkText(PaymentGatewayPageObject.useNewCardLink_LinkText));
+		boolean useNewCard = isElementPresent(By.linkText(PaymentGatewayPageObject.useNewCardLink_LinkText));
+		if(useNewCard){
+			driver.findElement(By.linkText(PaymentGatewayPageObject.useNewCardLink_LinkText)).click();
+			log("click on [Use New Card] link",ILogLevel.METHOD);
+		}
+	}
+
 
 }

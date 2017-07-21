@@ -8,7 +8,7 @@ public class LoginPageWapObject {
 	public static String logoutButtonField_xpath = ".//*[@id='logoutShowId']/a";
 	public static String errorMessage_Id = "errorSpan";
 	public static String registerButton_Xpath = "//input[@value='register']";
-	public static String facebookLogo_Xpath = "//i[@class='fb_logo img sp_tCe_aE5SkSv sx_aed73b']";
+	public static String facebookLogo_Xpath = "//span[contains(text(), 'Log in to Facebook')]";
 	public static String fbEmailIdField_Id = "email";
 	public static String fbPasswordField_Id = "pass";
 	public static String fbLoginButton_Id = "loginbutton";

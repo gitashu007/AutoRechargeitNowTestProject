@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="To Test Yahoo Login feature">
+
+	<test name="Test Yahoo login with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.YahooLoginTest">
+				<methods>
+					<include name="testYahooLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

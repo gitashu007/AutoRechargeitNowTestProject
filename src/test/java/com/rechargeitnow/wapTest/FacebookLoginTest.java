@@ -10,7 +10,7 @@ import com.rechargeitnow.projectPages.RegistrationPageWap;
 
 public class FacebookLoginTest extends TestCore{
 	@Test(priority=0)
-	public void testFaceBookLogin_WithValidInput(){
+	public void testFaceBookLogin_WithValidInputs(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
         homePage.clickLoginButton();

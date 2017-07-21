@@ -191,7 +191,7 @@ public class LoginPageWap extends BaseClass{
 	public void enterLinkedInPassword(String _linkedInPassword){
 		waitForElementDisplayed(By.id(LoginPageWapObject.linkedInPasswordField_Id));
 		driver.findElement(By.id(LoginPageWapObject.linkedInPasswordField_Id)).sendKeys(_linkedInPassword);
-		log("enter [LinkedIn Email]",ILogLevel.METHOD);
+		log("enter [LinkedIn Password]",ILogLevel.METHOD);
 	}
 	public void clickLinkedInAllowAccessButton(){
 		waitForElementDisplayed(By.xpath(LoginPageWapObject.linkedInAllowAccessButton_Xpath));

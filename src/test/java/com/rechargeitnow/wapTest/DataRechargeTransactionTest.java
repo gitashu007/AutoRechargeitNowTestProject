@@ -57,6 +57,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
@@ -104,6 +105,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 		
@@ -157,6 +159,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
@@ -207,6 +210,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
@@ -257,6 +261,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
@@ -314,6 +319,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 
@@ -369,6 +375,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		paymentPage.clickProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
+		pg.clickUseNewCard();
 		pg.clickRINUrl();
 		homePage.clickLuckyDrawCrossIcon2();
 

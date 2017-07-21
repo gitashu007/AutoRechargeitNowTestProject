@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To Test Facebook Login feature">
+
+	<test name="Test facebool login with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.FacebookLoginTest">
+				<methods>
+					<include name="testFaceBookLogin_WithValidInputs" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="Test facebool login with account where email id is not registered" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.FacebookLoginTest">
+				<methods>
+					<include name="testFacebookLogin_WithFBAccountNoEmail" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

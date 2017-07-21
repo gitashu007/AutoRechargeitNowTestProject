@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="To Test LinkedIn Login feature">
+
+	<test name="Test LinkedIn login with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.LinkedInLoginTest">
+				<methods>
+					<include name="testLinkedInLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

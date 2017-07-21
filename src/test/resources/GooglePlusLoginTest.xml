@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="To Test Google plus Login feature">
+
+	<test name="Test Google plus login with valid inputs" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.GooglePlusLoginTest">
+				<methods>
+					<include name="testGooglePlusLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	</suite>

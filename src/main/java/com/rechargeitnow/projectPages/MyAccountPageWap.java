@@ -43,5 +43,10 @@ public class MyAccountPageWap extends BaseClass{
 		driver.findElement(By.xpath(MyAccountPageWapObject.logoutIcon_Xpath)).click();
 		log("click on [logout] icon",ILogLevel.METHOD);
 	}
+	public void clickChangePasswordTab(){
+		waitForElementDisplayed(By.xpath(MyAccountPageWapObject.changePasswordButton_Xpath));
+		driver.findElement(By.xpath(MyAccountPageWapObject.changePasswordButton_Xpath)).click();
+		log("click on [change password] tab",ILogLevel.METHOD);
+	}
 
 }

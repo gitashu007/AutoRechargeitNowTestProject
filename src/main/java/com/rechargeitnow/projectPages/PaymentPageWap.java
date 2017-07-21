@@ -33,7 +33,7 @@ public class PaymentPageWap extends BaseClass {
 	}
 
 	public void clickPDCCheckBox(){
-		pause(3);
+		pause(2);
 		waitForElementDisplayed(By.cssSelector(PaymentPageWapObject.PDCCheckbox_Css));
 		driver.findElement(By.cssSelector(PaymentPageWapObject.PDCCheckbox_Css)).click();
 		log("click on [PDC] checkbox", ILogLevel.METHOD);
@@ -41,14 +41,20 @@ public class PaymentPageWap extends BaseClass {
 
 	public void clickProceedButton(){
 		waitForElementDisplayed(By.id(PaymentPageWapObject.proceedButton_Id));
-		driver.findElement(By.id(PaymentPageWapObject.proceedButton_Id)).click();
-		log("click on [proceed] button", ILogLevel.METHOD);
+		boolean proceed = isElementPresent(By.id(PaymentPageWapObject.proceedButton_Id));
+		if(proceed){
+			driver.findElement(By.id(PaymentPageWapObject.proceedButton_Id)).click();
+			log("click on [proceed] button", ILogLevel.METHOD);
+		}
 	}
 
 	public void clickPDCProceedButton(){
 		waitForElementDisplayed(By.xpath(PaymentPageWapObject.proceedPDCButton_Xpath));
-		driver.findElement(By.xpath(PaymentPageWapObject.proceedPDCButton_Xpath)).click();
-		log("click on [proceed] button", ILogLevel.METHOD);
+		boolean proceed = isElementPresent(By.xpath(PaymentPageWapObject.proceedPDCButton_Xpath));
+		if(proceed){
+			driver.findElement(By.xpath(PaymentPageWapObject.proceedPDCButton_Xpath)).click();
+			log("click on [proceed] button", ILogLevel.METHOD);
+		}
 	}
 	
 	public boolean isRechargeAmountExpected(String expectedAmount){
