@@ -91,5 +91,75 @@
 			</class>
 		</classes>
 	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_21" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_PDCPromoPGScen21" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_22" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_PGScen22" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_23" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponPGScen23" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_24" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_PGandPDCScen24" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_25" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CouponPDCandPGScen25" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_26" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_CpnPDCPromoRINandPGScen26" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+	
+	<test name="DTH recharge flow : Scenario_31" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHRechargeTransactionTest">
+				<methods>
+					<include name="testDTHRechargeFlow_RINcashPGPromoAndPDCScen31" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
 
 </suite>

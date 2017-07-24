@@ -15,7 +15,7 @@ import com.rechargeitnow.projectPages.SummaryPageWap;
 
 public class PostpaidBillPayTransactionFlowTest extends TestCore{
 	
-	@Test(priority=0)
+	/*@Test(priority=0)
 	public void testPostpaidBillPayFlow_couponScen1(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
@@ -536,7 +536,7 @@ public class PostpaidBillPayTransactionFlowTest extends TestCore{
 		Assert.assertTrue(receiptPage.isRINcashPointDisplayed("9"), "RINcash points are not displayed");
 		Assert.assertTrue(receiptPage.isPromoDiscountDisplayed("1"), "Promo discount is not displayed");
 
-	}
+	}*/
 
 	@Test(priority=11)
 	public void testPostpaidBillPayFlow_RINPGScen14(){

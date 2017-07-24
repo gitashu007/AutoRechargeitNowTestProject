@@ -542,7 +542,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 
 		Assert.assertTrue(summaryPage.isPDCapplied(), "Partner Discount Coupon is not applied");
 		Assert.assertTrue(summaryPage.isPromoApplied(), "Promo is not applied");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("249"), "Payable amount is not shown");
+		Assert.assertTrue(paymentPage.isPayableAmountPaymentPagePresent("259"), "Payable amount is not shown");
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
 
@@ -637,11 +637,6 @@ public class DTHRechargeTransactionTest extends TestCore{
 		SummaryPageWap summaryPage = new SummaryPageWap(driver);
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
-
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentData("240"), "Payable amount is not shown");
-		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
-		paymentPage.clickProceedButton();
-		Assert.assertTrue(paymentPage.isNetPayableAmountExpected(), "payable amount on summary page and PDC page are different");
 		paymentPage.clickPDCProceedButton();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
@@ -687,11 +682,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		SummaryPageWap summaryPage = new SummaryPageWap(driver);
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
-
-		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("260"), "Payable amount is not shown");
-		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
-		paymentPage.clickProceedButton();
+		paymentPage.clickProceedButtonWithPDC();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickUseNewCard();
@@ -736,11 +727,7 @@ public class DTHRechargeTransactionTest extends TestCore{
 		SummaryPageWap summaryPage = new SummaryPageWap(driver);
 		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
 		paymentPage.clickProceedButton();
-
-		Assert.assertTrue(summaryPage.isPDCapplied(), "PDC is not displayed");
-		Assert.assertTrue(paymentPage.isPayableAmountPaymentScen6("250"), "Payable amount is not shown");
-		summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
-		paymentPage.clickProceedButton();
+		paymentPage.clickProceedButtonWithPDC();
 
 		PaymentGatewayPage pg = new PaymentGatewayPage(driver);
 		pg.clickUseNewCard();
@@ -863,6 +850,5 @@ public class DTHRechargeTransactionTest extends TestCore{
 		Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("DTH_Number")), "Recharged mobile no. is not correct");
 		Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
 	}
-
 
 }

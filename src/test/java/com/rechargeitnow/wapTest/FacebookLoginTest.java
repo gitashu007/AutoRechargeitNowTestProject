@@ -22,8 +22,11 @@ public class FacebookLoginTest extends TestCore{
         loginPage.enterFBPassword(config.getProperty("FB_Password"));
         loginPage.clickFBLoginButton();
         Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
+        RegistrationPageWap registerPage = new RegistrationPageWap(driver);
+        registerPage.clickLogoutButton();
 	}
-	@Test(priority=1)
+	
+	/*@Test(priority=1)
 	public void testFacebookLogin_WithFBAccountNoEmail(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
@@ -40,7 +43,7 @@ public class FacebookLoginTest extends TestCore{
         loginPage.enterMobileNoFB(registerPage._mobile);
         loginPage.clickRegisterSubmitButtonFB();
         Assert.assertTrue(loginPage.isLoggedinPageOpen(), "Verification of [logout] button is failed");
-        
-	}
+        registerPage.clickLogoutButton();
+	}*/
 
 }

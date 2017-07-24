@@ -83,18 +83,18 @@ public class LoginPageWap extends BaseClass{
 		}return false;
 	}
 	public void enterFBEmail(String _fbEmail){
-		waitForElementDisplayed(By.id(LoginPageWapObject.fbEmailIdField_Id));
-		driver.findElement(By.id(LoginPageWapObject.fbEmailIdField_Id)).sendKeys(_fbEmail);
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbEmailIdField_Xpath));
+		driver.findElement(By.xpath(LoginPageWapObject.fbEmailIdField_Xpath)).sendKeys(_fbEmail);
 		log("enter [Facebook Email]", ILogLevel.METHOD);
 	}
 	public void enterFBPassword(String _fbPass){
-		waitForElementDisplayed(By.id(LoginPageWapObject.fbPasswordField_Id));
-		driver.findElement(By.id(LoginPageWapObject.fbPasswordField_Id)).sendKeys(_fbPass);
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbPasswordField_Xpath));
+		driver.findElement(By.xpath(LoginPageWapObject.fbPasswordField_Xpath)).sendKeys(_fbPass);
 		log("enter [Facebook Password]", ILogLevel.METHOD);
 	}
 	public void clickFBLoginButton(){
-		waitForElementDisplayed(By.id(LoginPageWapObject.fbLoginButton_Id));
-		driver.findElement(By.id(LoginPageWapObject.fbLoginButton_Id)).click();
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbLoginButton_Xpath));
+		driver.findElement(By.xpath(LoginPageWapObject.fbLoginButton_Xpath)).click();
 		log("click on [FB LoginButton]", ILogLevel.METHOD);
 	}
 	

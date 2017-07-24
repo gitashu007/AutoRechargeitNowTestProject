@@ -6,6 +6,7 @@ public class PaymentPageWapObject {
 	public static String PDCCheckbox_Css = ".ui-btn-inner.ui-btn-corner-all";
 	public static String proceedButton_Id = "procceed";
 	public static String proceedPDCButton_Xpath = "(//input[@value='proceed'])[2]";
+	public static String proceedWithPdcButton_Xpath = "(//input[@value='proceed'])[1]";
 	public static String RINcashField_Id = "rincash";
 	public static String RINPinField_Id = "newPin";
 	public static String promoField_Id = "promoCode";

@@ -55,8 +55,11 @@ public class MobileRechargeAmountPageWap extends BaseClass{
 	
 	public void clickOKButton(){
 		waitForElementDisplayed(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath));
-		driver.findElement(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath)).click();
-		log("click on [ok] button",ILogLevel.METHOD);
+		boolean okButton = isElementPresent(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath));
+		if(okButton){
+			driver.findElement(By.xpath(MobileRechargeAmountPageWapObject.okButton_Xpath)).click();
+			log("click on [ok] button",ILogLevel.METHOD);
+		}
 	}
 	
 

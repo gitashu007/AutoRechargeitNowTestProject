@@ -8,10 +8,10 @@ public class LoginPageWapObject {
 	public static String logoutButtonField_xpath = ".//*[@id='logoutShowId']/a";
 	public static String errorMessage_Id = "errorSpan";
 	public static String registerButton_Xpath = "//input[@value='register']";
-	public static String facebookLogo_Xpath = "//span[contains(text(), 'Log in to Facebook')]";
-	public static String fbEmailIdField_Id = "email";
-	public static String fbPasswordField_Id = "pass";
-	public static String fbLoginButton_Id = "loginbutton";
+	public static String facebookLogo_Xpath = "//div[contains(text(), 'Log in to your Facebook account to connect to Rechargeitnow WAP')]";
+	public static String fbEmailIdField_Xpath = "//input[@placeholder='Email address or phone number']";
+	public static String fbPasswordField_Xpath = "//input[@placeholder='Facebook password']";
+	public static String fbLoginButton_Xpath = "//button[@value='Log In']";
 	public static String facebookIcon_Xpath = "//img[@src='/resources/images/ico-facebook.jpg']";
 	public static String yahooIcon_Xpath = "//img[@src='/resources/images/ico-yahoo.jpg']";
 	public static String gPlusIcon_Xpath = "//img[@src='/resources/images/ico-google.jpg']";

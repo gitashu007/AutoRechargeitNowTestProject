@@ -56,6 +56,15 @@ public class PaymentPageWap extends BaseClass {
 			log("click on [proceed] button", ILogLevel.METHOD);
 		}
 	}
+	public void clickProceedButtonWithPDC(){
+		waitForElementDisplayed(By.xpath(PaymentPageWapObject.proceedWithPdcButton_Xpath));
+		boolean proceed2 = isElementPresent(By.xpath(PaymentPageWapObject.proceedWithPdcButton_Xpath));
+		if(proceed2){
+			driver.findElement(By.xpath(PaymentPageWapObject.proceedWithPdcButton_Xpath)).click();
+			log("click on [proceed] button", ILogLevel.METHOD);
+		}
+		}
+		
 	
 	public boolean isRechargeAmountExpected(String expectedAmount){
 		waitForElementDisplayed(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath));
