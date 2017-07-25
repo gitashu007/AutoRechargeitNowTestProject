@@ -136,7 +136,7 @@
 		<classes>
 			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
 				<methods>
-					<include name="testRechargeFlow_CouponRINcashPDCScen16" />
+					<include name="testMobileRechargeFlow_CouponRINcashPDCScen16" />
 				</methods>
 			</class>
 		</classes>
@@ -176,7 +176,7 @@
 		<classes>
 			<class name="com.rechargeitnow.wapTest.MobileRechargeTransactionTest">
 				<methods>
-					<include name="testRechargeFlow_PromoPGScen20" />
+					<include name="testMobileRechargeFlow_PromoPGScen20" />
 				</methods>
 			</class>
 		</classes>

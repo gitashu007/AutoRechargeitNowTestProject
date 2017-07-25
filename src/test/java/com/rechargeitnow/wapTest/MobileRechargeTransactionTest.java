@@ -672,7 +672,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=13)
-	public void testRechargeFlow_CouponRINcashPDCScen16(){
+	public void testMobileRechargeFlow_CouponRINcashPDCScen16(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
@@ -872,7 +872,7 @@ public class MobileRechargeTransactionTest extends TestCore{
 	}
 	
 	@Test(priority=17)
-	public void testRechargeFlow_PromoPGScen20(){
+	public void testMobileRechargeFlow_PromoPGScen20(){
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();

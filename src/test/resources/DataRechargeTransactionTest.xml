@@ -2,6 +2,186 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="To test data recharge transaction flow">
 
+	<test name="Data recharge flow : Scenario_1" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponScen1" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Data recharge flow : Scenario_2" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponRINcashScen2" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_3" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPromoRINcashScen3" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_4" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPromoRINcashPGScen4" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_6" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPromoScen6" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Data recharge flow : Scenario_7" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPDCPromoPGScen7" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_8" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponRINcashPGScen8" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Mobile recharge flow : Scenario_9" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponPDCRINcashPGScen9" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Mobile recharge flow : Scenario_10" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponRincashPromoPDCScen10" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Mobile recharge flow : Scenario_12" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINcashScen12" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_13" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINPromoScen13" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_14" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINPGScen14" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_15" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINcashPDCScen15" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_16" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_CouponRINcashPDCScen16" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_17" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINcashPromoPGScen17" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_18" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_RINcashPromoPDCScen18" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_19" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_PDCRINcashPGScen19" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Data recharge flow : Scenario_20" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
+				<methods>
+					<include name="testDataRechargeFlow_PromoPGScen20" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
 	<test name="data recharge flow : Scenario_21" enabled="true">
 		<classes>
 			<class name="com.rechargeitnow.wapTest.DataRechargeTransactionTest">
@@ -10,7 +190,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_22" enabled="true">
 		<classes>
@@ -20,7 +200,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_23" enabled="true">
 		<classes>
@@ -30,7 +210,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_24" enabled="true">
 		<classes>
@@ -40,7 +220,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_25" enabled="true">
 		<classes>
@@ -50,7 +230,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_26" enabled="true">
 		<classes>
@@ -60,7 +240,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 	<test name="data recharge flow : Scenario_31" enabled="true">
 		<classes>
@@ -70,6 +250,6 @@
 				</methods>
 			</class>
 		</classes>
-	</test> <!-- Test -->
+	</test> 
 
 </suite>
