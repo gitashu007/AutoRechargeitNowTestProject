@@ -103,7 +103,7 @@ public class LandingPageWap extends BaseClass{
 	}
 
 	public void selectCircle(String _option){
-		pause(2);
+		pause(3);
 		waitForElementDisplayed(By.id(LandingPageWapObject.selectCircleDropdown_Id));
 		WebElement element = driver.findElement(By.id(LandingPageWapObject.selectCircleDropdown_Id));
 		Select select = new Select(element);

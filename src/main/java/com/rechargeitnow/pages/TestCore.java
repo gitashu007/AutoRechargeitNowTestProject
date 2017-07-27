@@ -44,8 +44,6 @@ public class TestCore extends Page{
 
 	@BeforeSuite
 	public void beforeSuite() throws MalformedURLException{
-		log("----------- Launching Device -------------", ILogLevel.TESTCASE);
-
 
 		try{
 			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//resources//config.properties");
@@ -56,6 +54,7 @@ public class TestCore extends Page{
 		}
 
 		if(config.getProperty("Platform").toLowerCase().contains("windows")){
+			log("----------- Launching Browser on desktop-------------", ILogLevel.TESTCASE);
 
 			if(config.getProperty("Browser").toLowerCase().contains("firefox")){
 				driver1 = new FirefoxDriver();
@@ -65,27 +64,9 @@ public class TestCore extends Page{
 				driver1 = new ChromeDriver();
 			}
 		}
-
+		
 		if(config.getProperty("Platform").toLowerCase().equals("android")){
-
-			if(config.getProperty("Application_Type").toLowerCase().equals("apk")){
-				File classpathRoot = new File(System.getProperty("user.dir"));
-				File app = new File(classpathRoot, "/app/OnlineMobileDTHRechargev1.0.16.apk");
-
-				DesiredCapabilities capabilities = new DesiredCapabilities();
-				capabilities.setCapability("deviceName", "52034220fefd7327");//note 3- 3204a822185f2173// s3-4df1b3c606d75f11
-				capabilities.setCapability("platformVersion", "6.0.1");
-				capabilities.setCapability("appPackage", "com.olr.rechargeitnow");
-				//capabilities.setCapability("appActivity", "com.olr.rechargeitnow.AppLaunchActivity");
-				capabilities.setCapability("app", app.getAbsolutePath());
-				capabilities.setCapability("platformName", "android");
-				// capabilities.setCapability("--no-reset", true);
-
-				driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-
-				log("----------- Launching rechargeitnow App -------------", ILogLevel.TESTCASE);
-			}
-
+			log("----------- Launching Device -------------", ILogLevel.TESTCASE);
 
 			if(config.getProperty("Application_Type").toLowerCase().equals("wap")){
 
@@ -112,20 +93,16 @@ public class TestCore extends Page{
 		}
 		else{
 
-			log("You Selected Wrong Platform, Please Select Either \"Android or Portal\" ", ILogLevel.ERROR);
+			log("You Selected Wrong Platform, Please Select Either \"Android or windows\" ", ILogLevel.ERROR);
 		}
 
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp(Method method) throws IOException, InterruptedException, MalformedURLException {
-		
-		if(config.getProperty("Application_Type").toLowerCase().equals("wap")){
-			
-			driver.get(config.getProperty("site_url"));
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			
-		}
+
+		driver.get(config.getProperty("site_url"));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		log("--------------------------------------------------------", ILogLevel.TESTCASE);
 		log("---------Test ["+method.getName()+"] Started------------", ILogLevel.TESTCASE);

@@ -27,6 +27,7 @@ public class LoginPageWapObject {
 	public static String linkedInEmailIdField_Id = "session_key-oauthAuthorizeForm";
 	public static String linkedInPasswordField_Id = "session_password-oauthAuthorizeForm";
 	public static String linkedInAllowAccessButton_Xpath = "//*[@id='body']/div/form/div[2]/ul/li[1]/input"; 
+	public static String fbContinueButton_Xpath = "//button[@value='Continue']";
 	
 	
 

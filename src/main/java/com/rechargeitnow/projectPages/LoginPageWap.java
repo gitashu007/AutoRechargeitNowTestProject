@@ -87,6 +87,15 @@ public class LoginPageWap extends BaseClass{
 		driver.findElement(By.xpath(LoginPageWapObject.fbEmailIdField_Xpath)).sendKeys(_fbEmail);
 		log("enter [Facebook Email]", ILogLevel.METHOD);
 	}
+	public void clickFBContinueButton(){
+		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbContinueButton_Xpath));
+		boolean continueButton = isElementPresent(By.xpath(LoginPageWapObject.fbContinueButton_Xpath));
+		if(continueButton){
+		driver.findElement(By.xpath(LoginPageWapObject.fbContinueButton_Xpath)).click();
+		log("click [continue] button", ILogLevel.METHOD);
+		}
+	}
+	
 	public void enterFBPassword(String _fbPass){
 		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbPasswordField_Xpath));
 		driver.findElement(By.xpath(LoginPageWapObject.fbPasswordField_Xpath)).sendKeys(_fbPass);
@@ -96,6 +105,7 @@ public class LoginPageWap extends BaseClass{
 		waitForElementDisplayed(By.xpath(LoginPageWapObject.fbLoginButton_Xpath));
 		driver.findElement(By.xpath(LoginPageWapObject.fbLoginButton_Xpath)).click();
 		log("click on [FB LoginButton]", ILogLevel.METHOD);
+		pause(5);
 	}
 	
 	public void enterEmailIdFB(String _email){
