@@ -33,6 +33,12 @@
 
 		<!-- Postpaid Bill Pay Transactions Test suite file -->
 		<suite-file path=".//src/test/resources/PostpaidBillPayTransactionFlowTest.xml"></suite-file>
+		
+		<!-- DTH Recharge Transactions for Multi Operator Test suite file -->
+		<suite-file path=".//src/test/resources/DTHTransactionFlowMultiOperatorTest.xml"></suite-file>
+
+		<!-- Mobile Recharge Transactions for Multi Operator Test suite file -->
+		<suite-file path=".//src/test/resources/MobileTransactionFlowMultiOperatorTest.xml"></suite-file>
 
 		<!-- Edit Profile Test suite file -->
 		<suite-file path=".//src/test/resources/EditProfileTest.xml"></suite-file>

@@ -178,6 +178,11 @@ public class BaseClass {
 			//System.out.println(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
 		}
 	}
+	
+	public String getConfigPropertiesElement(String _value){
+		String element = TestCore.config.getProperty(_value);
+		return element;
+	}
 
 	public static void captureScreenshot() {
 		Random rand = new Random();

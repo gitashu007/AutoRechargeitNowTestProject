@@ -1,12 +1,13 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+
+import org.testng.ITestResult;
 
 import com.rechargeitnow.pageObject.PaymentGatewayPageObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
+import com.rechargeitnow.pages.TestCore;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -36,6 +37,6 @@ public class PaymentGatewayPage extends BaseClass {
 			log("click on [Use New Card] link",ILogLevel.METHOD);
 		}
 	}
-
+	
 
 }

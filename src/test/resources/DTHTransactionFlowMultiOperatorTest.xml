@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="To test data recharge transaction flow">
+
+	<test name="Data recharge flow : Scenario_1" enabled="true">
+		<classes>
+			<class name="com.rechargeitnow.wapTest.DTHTransactionFlowMultiOperatorTest">
+				<methods>
+					<include name="testDTHRechargeFlowMultiOperator_PGScen22" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	</suite>
