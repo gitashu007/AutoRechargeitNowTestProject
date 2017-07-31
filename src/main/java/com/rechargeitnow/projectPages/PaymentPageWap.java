@@ -31,6 +31,15 @@ public class PaymentPageWap extends BaseClass {
 		}return false;
 
 	}
+	public boolean isMultiRechargeAmountCorrect(){
+		waitForElementDisplayed(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath));
+		String expectedNumber = TestCore.config.getProperty("MultiRecharge_Amount");
+		String actualNumber = driver.findElement(By.xpath(PaymentPageWapObject.netPayableAmount_Xpath)).getText();
+		if(actualNumber.equals(expectedNumber)){
+			return true;
+		}return false;
+
+	}
 
 	public void clickPDCCheckBox(){
 		pause(2);

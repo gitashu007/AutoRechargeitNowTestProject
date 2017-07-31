@@ -52,7 +52,7 @@ public class MobileTransactionFlowMultiOperatorTest extends TestCore{
 					rechargeAmountPage.clickProceedButton();
 
 					PaymentPageWap paymentPage = new PaymentPageWap(driver);
-					Assert.assertTrue(paymentPage.isRechargeAmountCorrect(), "Recharge amount is wrong on payment page");
+					Assert.assertTrue(paymentPage.isMultiRechargeAmountCorrect(), "Recharge amount is wrong on payment page");
 					paymentPage.clickPDCCheckBox();
 					SummaryPageWap summaryPage = new SummaryPageWap(driver);
 					summaryPage.selectPaymentOption(config.getProperty("MultiPayment_Method"), arrSplit2[j]);

@@ -51,7 +51,7 @@ public class DTHTransactionFlowMultiOperatorTest extends TestCore{
 					rechargeAmountPage.clickOKButton();
 
 					PaymentPageWap paymentPage = new PaymentPageWap(driver);
-					Assert.assertTrue(paymentPage.isRechargeAmountExpected("100"), "Recharge amount is wrong on payment page");
+					Assert.assertTrue(paymentPage.isRechargeAmountExpected(config.getProperty("MultiDTHRecharge_Amount")), "Recharge amount is wrong on payment page");
 					paymentPage.clickPDCCheckBox();
 					SummaryPageWap summaryPage = new SummaryPageWap(driver);
 					summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), arrSplit2[j]);
