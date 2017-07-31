@@ -26,7 +26,9 @@ public class DTHTransactionFlowMultiOperatorTest extends TestCore{
 			String[] arrSplit2 = strOption.split(",");
 			for(int j=0; j< arrSplit2.length; j++){
 				try {
+					
 					HomePageWap homePage = new HomePageWap(driver);
+					homePage.getUrl();
 					homePage.clickLuckyDrawCrossIcon();
 					homePage.clickLoginButton();
 
@@ -38,12 +40,12 @@ public class DTHTransactionFlowMultiOperatorTest extends TestCore{
 
 					LandingPageWap landingPage = new LandingPageWap(driver);
 					landingPage.clickRechargeTypeButton("dth");
-					landingPage.selectDTHOperator(config.getProperty("DTH_Operator"));
-					landingPage.enterDTHNumberMulti();
+					landingPage.selectDTHOperator(arrSplit[i]);
+					landingPage.enterDTHNumberMulti(arrSplit[i]);
 					landingPage.clickDTHSubmitButton();
 
 					MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
-					Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("DTH_Number")), "Mobile number is wrong on recharge amount page");
+					Assert.assertTrue(rechargeAmountPage.isMultiDTHNumberCorrect(arrSplit[i]), "Mobile number is wrong on recharge amount page");
 					rechargeAmountPage.enterRechargeAmount(config.getProperty("MultiDTHRecharge_Amount"));
 					rechargeAmountPage.clickProceedButton();
 					rechargeAmountPage.clickOKButton();
@@ -52,9 +54,9 @@ public class DTHTransactionFlowMultiOperatorTest extends TestCore{
 					Assert.assertTrue(paymentPage.isRechargeAmountExpected("100"), "Recharge amount is wrong on payment page");
 					paymentPage.clickPDCCheckBox();
 					SummaryPageWap summaryPage = new SummaryPageWap(driver);
-					summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+					summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), arrSplit2[j]);
 					paymentPage.clickProceedButton();
-					summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), config.getProperty("Payment_Option"));
+					summaryPage.selectPaymentOption(config.getProperty("Payment_Method"), arrSplit2[j]);
 					paymentPage.clickProceedButton();
 					paymentPage.clickPDCProceedButton();
 
@@ -66,8 +68,9 @@ public class DTHTransactionFlowMultiOperatorTest extends TestCore{
 					ReceiptPageWap receiptPage = new ReceiptPageWap(driver);
 					Assert.assertTrue(receiptPage.isFailedConfirmationPresent(), "User is redirected to wrong page");
 					Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
-					Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("DTH_Number")), "Recharged mobile no. is not correct");
+					Assert.assertTrue(receiptPage.isMultiDTHNoSameScen1(arrSplit[i]), "Recharged mobile no. is not correct");
 					Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
+					
 				}
 				catch (Exception e) {
 					e.printStackTrace();

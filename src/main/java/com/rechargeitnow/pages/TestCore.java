@@ -36,7 +36,6 @@ public class TestCore extends Page{
 	public static Properties config = new Properties();
 	public static WebDriver driver1;
 	public static AppiumDriver driver;
-	public static IOSDriver driver2;
 	public static String SCREENSHOT_FOLDER = "target/Screenshots/";
 	public static final String SCREENSHOT_FORMAT = ".png";
 
@@ -60,6 +59,7 @@ public class TestCore extends Page{
 			else if(config.getProperty("Browser").toLowerCase().contains("chrome")){
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\resources\\drivers\\chromedriver.exe");
 				driver1 = new ChromeDriver();
+				
 			}
 		}
 		

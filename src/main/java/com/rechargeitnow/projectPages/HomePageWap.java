@@ -7,6 +7,7 @@ import com.rechargeitnow.pageObject.MyAccountPageWapObject;
 import com.rechargeitnow.pageObject.ReceiptPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
+import com.rechargeitnow.pages.TestCore;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -31,6 +32,9 @@ public class HomePageWap extends BaseClass{
 			 log("click on [X] icon of lucky draw", ILogLevel.METHOD);
 		}
 		
+	}
+	public void getUrl(){
+		driver.get(TestCore.config.getProperty("site_url"));
 	}
 	public void clickLuckyDrawCrossIcon2(){
 		pause(55);

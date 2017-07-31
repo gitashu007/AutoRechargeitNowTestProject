@@ -20,14 +20,14 @@ public class MobileTransactionFlowMultiOperatorTest extends TestCore{
 		String operators = TestCore.config.getProperty("MultiMobile_Operator");
 		String strOperators = operators;
 		String[] arrSplit = strOperators.split(",");
-		for (int i=0; i< arrSplit.length; i++)
-		{
+		for (int i=0; i< arrSplit.length; i++){
 			String bankOption = TestCore.config.getProperty("MultiplePayment_Option");
 			String strOption = bankOption;
 			String[] arrSplit2 = strOption.split(",");
 			for(int j=0; j< arrSplit2.length; j++){
 				try {
 					HomePageWap homePage = new HomePageWap(driver);
+					homePage.getUrl();
 					homePage.clickLuckyDrawCrossIcon();
 					homePage.clickLoginButton();
 
@@ -71,7 +71,6 @@ public class MobileTransactionFlowMultiOperatorTest extends TestCore{
 					Assert.assertTrue(receiptPage.isOrderIdPresentScen1(), "Order Id is missing");
 					Assert.assertTrue(receiptPage.isMobileNoSameScen1(config.getProperty("Mobile_Number")), "Recharged mobile no. is not correct");
 					Assert.assertTrue(receiptPage.isRechargeAmountSameScen1(), "Recharge amount is different on receipt");
-					homePage.clickRINLogo();
 				}
 				catch (Exception e) {
 					e.printStackTrace();

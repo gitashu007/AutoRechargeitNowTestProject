@@ -51,11 +51,13 @@ public class LandingPageWap extends BaseClass{
 		driver.findElement(By.id(LandingPageWapObject.postpaidSubmitButton_Id)).click();
 		log("click on [Submit] button", ILogLevel.METHOD);
 	}
+
 	public void clickDTHSubmitButton(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.DTHSubmitButton_Xpath));
 		driver.findElement(By.xpath(LandingPageWapObject.DTHSubmitButton_Xpath)).click();
 		log("click on [Submit] button", ILogLevel.METHOD);
 	}
+
 	public void clickSubmitButtonData2(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButtonData2_Xpath));
 		driver.findElement(By.xpath(LandingPageWapObject.submitButtonData2_Xpath)).click();
@@ -174,46 +176,46 @@ public class LandingPageWap extends BaseClass{
 		waitForElementDisplayed(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id));
 		driver.findElement(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id)).sendKeys(_subscriberId);
 		log("enter [Sundirect Number]", ILogLevel.METHOD);
-		}
-	
-	public void selectAllOperator(String operator){
-		    	waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
-				driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
-
-				waitForElementDisplayed(By.xpath("//div[contains(text(), '"+operator+"')]"));
-				driver.findElement(By.xpath("//div[contains(text(), '"+operator+"')]")).click();
-				log("Select [Operator]", ILogLevel.METHOD);
-		 
-		
 	}
-	
-	public void enterDTHNumberMulti(){
-		if(TestCore.config.getProperty("DTH_Operator").equals("airtel digital tv")){
+
+	public void selectAllOperator(String operator){
+		waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
+		driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
+
+		waitForElementDisplayed(By.xpath("//div[contains(text(), '"+operator+"')]"));
+		driver.findElement(By.xpath("//div[contains(text(), '"+operator+"')]")).click();
+		log("Select [Operator]", ILogLevel.METHOD);
+
+
+	}
+
+	public void enterDTHNumberMulti(String _selectedOperator){
+		if(_selectedOperator.equals("airtel digital tv")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.airtelDTHNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.airtelDTHNumberField_Id)).sendKeys(getConfigPropertiesElement("AirtelDigitaltv_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
-		else if(TestCore.config.getProperty("DTH_Operator").equals("dishtv")){
+		else if(_selectedOperator.equals("dishtv")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.dishDTHNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.dishDTHNumberField_Id)).sendKeys(getConfigPropertiesElement("Dishtv_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
-		else if(TestCore.config.getProperty("DTH_Operator").equals("reliance digital tv")){
+		else if(_selectedOperator.equals("reliance digital tv")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.relianceDTHNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.relianceDTHNumberField_Id)).sendKeys(getConfigPropertiesElement("RelianceDigitaltv_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
-		else if(TestCore.config.getProperty("DTH_Operator").equals("sun direct")){
+		else if(_selectedOperator.equals("sun direct")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.sunDirectDTHNumberField_Id)).sendKeys(getConfigPropertiesElement("SunDirect_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
-		else if(TestCore.config.getProperty("DTH_Operator").equals("tata sky")){
+		else if(_selectedOperator.equals("tata sky")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.tataNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.tataNumberField_Id)).sendKeys(getConfigPropertiesElement("TataSky_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
 		}
-		else if(TestCore.config.getProperty("DTH_Operator").equals("videocon d2h")){
+		else if(_selectedOperator.equals("videocon d2h")){
 			waitForElementDisplayed(By.id(LandingPageWapObject.videoconDTHNumberField_Id));
 			driver.findElement(By.id(LandingPageWapObject.videoconDTHNumberField_Id)).sendKeys(getConfigPropertiesElement("VideoconD2H_Number"));
 			log("enter [DTH Number]", ILogLevel.METHOD);
