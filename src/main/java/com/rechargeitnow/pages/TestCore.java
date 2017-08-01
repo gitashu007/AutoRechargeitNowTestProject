@@ -2,7 +2,6 @@ package com.rechargeitnow.pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.io.File;
@@ -80,7 +79,7 @@ public class TestCore extends Page{
 					capabilities.setCapability(MobileCapabilityType.VERSION,config.getProperty("Android_Version"));
 					capabilities.setCapability("newCommandTimeout", 60 * 5);
 					capabilities.setCapability("chromedriverExecutable", app.getAbsolutePath());
-
+					
 					driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 					log("----------- Launching Chrome Browser -------------", ILogLevel.TESTCASE);
@@ -89,18 +88,21 @@ public class TestCore extends Page{
 
 			}
 		}
-		else{
-
-			log("You Selected Wrong Platform, Please Select Either \"Android or windows\" ", ILogLevel.ERROR);
-		}
 
 	}
 
 	@BeforeMethod(alwaysRun = true)
 	public void setUp(Method method) throws IOException, InterruptedException, MalformedURLException {
-
+		if(config.getProperty("Platform").toLowerCase().equals("windows")){
+            driver.manage().window().maximize();
+			driver.get(config.getProperty("site_url"));
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			}
+		
+		if(config.getProperty("Platform").toLowerCase().equals("android")){
 		driver.get(config.getProperty("site_url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
 
 		log("--------------------------------------------------------", ILogLevel.TESTCASE);
 		log("---------Test ["+method.getName()+"] Started------------", ILogLevel.TESTCASE);

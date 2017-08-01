@@ -43,9 +43,26 @@ public class LandingPageWap extends BaseClass{
 
 	public void clickSubmitButton2(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButton_Xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.submitButton_Xpath)).click();
-		log("click on [Submit] button", ILogLevel.METHOD);
+		boolean submit = isElementPresent(By.xpath(LandingPageWapObject.submitButton_Xpath));
+		if(submit){
+			driver.findElement(By.xpath(LandingPageWapObject.submitButton_Xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
 	}
+
+	public void clickSubmitButtonCon(){
+		waitForElementDisplayed(By.xpath(LandingPageWapObject.prepaidNumberSubmitButoon_Xpath));
+		boolean submit2 = isElementPresent(By.xpath(LandingPageWapObject.submitButton3_Xpath));
+		if(submit2){
+			driver.findElement(By.xpath(LandingPageWapObject.submitButton3_Xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
+		else{
+			driver.findElement(By.xpath(LandingPageWapObject.prepaidNumberSubmitButoon_Xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
+	}
+
 	public void clickPostpaidSubmitButton(){
 		waitForElementDisplayed(By.id(LandingPageWapObject.postpaidSubmitButton_Id));
 		driver.findElement(By.id(LandingPageWapObject.postpaidSubmitButton_Id)).click();
@@ -67,17 +84,42 @@ public class LandingPageWap extends BaseClass{
 	public void selectConfirmNumberRadioButton(){
 		pause(2);
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.confirmNumberRadioButton_Xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.confirmNumberRadioButton_Xpath)).click();
-		log("click on [Yes] button", ILogLevel.METHOD);
+		boolean yesButton = isElementPresent(By.xpath(LandingPageWapObject.confirmNumberRadioButton_Xpath));
+		if(yesButton){
+			driver.findElement(By.xpath(LandingPageWapObject.confirmNumberRadioButton_Xpath)).click();
+			log("click on [Yes] button", ILogLevel.METHOD);
+		}
+	}
+	
+	public void clickPortedYesButton(){
+		waitForElementDisplayed(By.xpath(LandingPageWapObject.confirmYesButton_Xpath));
+		boolean yesButton= isElementPresent(By.xpath(LandingPageWapObject.confirmYesButton_Xpath));
+		if(yesButton){
+			driver.findElement(By.xpath(LandingPageWapObject.confirmYesButton_Xpath)).click();
+			log("click on [Yes] button", ILogLevel.METHOD);
+		}
 	}
 
 	public void selectOperator(String _operator){
-		waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
+		pause(2);
+		//waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
+		boolean element = isElementPresent(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
+		boolean element2 = isElementPresent(By.xpath("//*[@id='mobileOperatorId']"));
 
-		waitForElementDisplayed(By.xpath("//div[contains(text(), '"+_operator+"')]"));
-		driver.findElement(By.xpath("//div[contains(text(), '"+_operator+"')]")).click();
-		log("Select [Operator]", ILogLevel.METHOD);
+		if(element){		
+			driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
+
+			waitForElementDisplayed(By.xpath("//div[contains(text(), '"+_operator+"')]"));
+			driver.findElement(By.xpath("//div[contains(text(), '"+_operator+"')]")).click();
+			log("Select ['"+_operator+"']", ILogLevel.METHOD);
+
+		}
+		else if(element2){
+			WebElement operatorField = driver.findElement(By.xpath("//*[@id='mobileOperatorId']"));
+			Select select = new Select(operatorField);
+			select.selectByVisibleText(_operator);
+			log("Select ["+_operator+"] as operator", ILogLevel.METHOD);
+		}
 	}
 	public void selectPostpaidOperator(String _operator){
 		waitForElementDisplayed(By.id(LandingPageWapObject.postpaidOperator_Id));
@@ -96,12 +138,25 @@ public class LandingPageWap extends BaseClass{
 	}
 
 	public void selectOperatorData(String _operator){
-		waitForElementDisplayed(By.cssSelector(LandingPageWapObject.selectOperatorDropdownData_Css));
-		driver.findElement(By.cssSelector(LandingPageWapObject.selectOperatorDropdownData_Css)).click();
+		pause(2);
+		//waitForElementDisplayed(By.cssSelector(LandingPageWapObject.selectOperatorDropdownData_Css));
+		boolean element = isElementPresent(By.cssSelector(LandingPageWapObject.selectOperatorDropdownData_Css));
+		boolean element2 = isElementPresent(By.xpath("//*[@id='mobileOperatorId']"));
 
-		waitForElementDisplayed(By.xpath("//div[contains(text(), '"+_operator+"')]"));
-		driver.findElement(By.xpath("//div[contains(text(), '"+_operator+"')]")).click();
-		log("Select [Operator] for data recharge", ILogLevel.METHOD);
+		if(element){		
+			driver.findElement(By.cssSelector(LandingPageWapObject.selectOperatorDropdownData_Css)).click();
+
+			waitForElementDisplayed(By.xpath("//div[contains(text(), '"+_operator+"')]"));
+			driver.findElement(By.xpath("//div[contains(text(), '"+_operator+"')]")).click();
+			log("Select ['"+_operator+"'] for data recharge", ILogLevel.METHOD);
+
+		}
+		else if(element2){
+			WebElement operatorField = driver.findElement(By.xpath("//*[@id='dataOperatorId']"));
+			Select select = new Select(operatorField);
+			select.selectByVisibleText(_operator);
+			log("Select ["+_operator+"] as operator", ILogLevel.METHOD);
+		}
 	}
 
 	public void selectCircle(String _option){
@@ -124,14 +179,24 @@ public class LandingPageWap extends BaseClass{
 
 	public void clickSubmitButton3(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButton3_Xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.submitButton3_Xpath)).click();
-		log("click on [Submit] button", ILogLevel.METHOD);
+		boolean submit = isElementPresent(By.xpath(LandingPageWapObject.submitButton3_Xpath));
+		if(submit){
+			driver.findElement(By.xpath(LandingPageWapObject.submitButton3_Xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
 	}
 
 	public void clickSubmitButtonData(){
 		waitForElementDisplayed(By.xpath(LandingPageWapObject.submitButtonData_xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.submitButtonData_xpath)).click();
-		log("click on [Submit] button", ILogLevel.METHOD);
+		boolean submit2 = isElementPresent(By.xpath(LandingPageWapObject.submitButtonData_xpath));
+		if(submit2){
+			driver.findElement(By.xpath(LandingPageWapObject.submitButtonData_xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
+		else{
+			driver.findElement(By.xpath(LandingPageWapObject.submitDataButtonPrepaid_Xpath)).click();
+			log("click on [Submit] button", ILogLevel.METHOD);
+		}
 	}
 
 	public void enterPostpaidMobileNo(String _postpaidNumber){
@@ -179,14 +244,25 @@ public class LandingPageWap extends BaseClass{
 	}
 
 	public void selectAllOperator(String operator){
-		waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
-		driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
+		pause(2);
+		//waitForElementDisplayed(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
+		boolean element = isElementPresent(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath));
+		boolean element2 = isElementPresent(By.xpath("//*[@id='mobileOperatorId']"));
 
-		waitForElementDisplayed(By.xpath("//div[contains(text(), '"+operator+"')]"));
-		driver.findElement(By.xpath("//div[contains(text(), '"+operator+"')]")).click();
-		log("Select [Operator]", ILogLevel.METHOD);
+		if(element){		
+			driver.findElement(By.xpath(LandingPageWapObject.selectOperatorDropdown_Xpath)).click();
 
+			waitForElementDisplayed(By.xpath("//div[contains(text(), '"+operator+"')]"));
+			driver.findElement(By.xpath("//div[contains(text(), '"+operator+"')]")).click();
+			log("Select ['"+operator+"']", ILogLevel.METHOD);
 
+		}
+		else if(element2){
+			WebElement operatorField = driver.findElement(By.xpath("//*[@id='mobileOperatorId']"));
+			Select select = new Select(operatorField);
+			select.selectByVisibleText(operator);
+			log("Select ["+operator+"] as operator", ILogLevel.METHOD);
+		}
 	}
 
 	public void enterDTHNumberMulti(String _selectedOperator){

@@ -44,8 +44,9 @@ public class MobileTransactionFlowMultiOperatorTest extends TestCore{
 					landingPage.selectConfirmNumberRadioButton();
 					landingPage.selectAllOperator(arrSplit[i]);
 					landingPage.selectCircle(config.getProperty("Circle"));
-					landingPage.clickSubmitButton3();
-
+					landingPage.clickSubmitButtonCon();
+					landingPage.clickPortedYesButton();
+					
 					MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 					Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Mobile_Number")), "Mobile number is wrong on recharge amount page");
 					rechargeAmountPage.enterRechargeAmount(config.getProperty("MultiRecharge_Amount"));

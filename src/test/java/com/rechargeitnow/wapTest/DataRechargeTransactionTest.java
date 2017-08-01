@@ -35,6 +35,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -75,6 +76,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -120,6 +122,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -167,6 +170,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -229,6 +233,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -287,6 +292,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -344,6 +350,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -402,6 +409,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -458,6 +466,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -504,6 +513,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -546,6 +556,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -591,6 +602,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -646,6 +658,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -689,6 +702,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -735,6 +749,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -794,6 +809,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -836,6 +852,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -889,6 +906,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -944,6 +962,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -997,6 +1016,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -1045,6 +1065,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -1100,6 +1121,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -1149,6 +1171,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -1201,6 +1224,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
@@ -1259,6 +1283,7 @@ public class DataRechargeTransactionTest extends TestCore{
 		landingPage.selectOperatorData(config.getProperty("Data_Operator"));
 		landingPage.selectDataCircle(config.getProperty("Data_Circle"));
 		landingPage.clickSubmitButtonData();
+		landingPage.clickPortedYesButton();
 
 		MobileRechargeAmountPageWap rechargeAmountPage = new MobileRechargeAmountPageWap(driver);
 		Assert.assertTrue(rechargeAmountPage.isMobileNumberCorrect(config.getProperty("Data_MobileNumber")), "Mobile number is wrong on recharge amount page");
