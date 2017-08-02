@@ -1,6 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -15,13 +16,24 @@ public class SummaryPageWap extends BaseClass {
 
 	public SummaryPageWap(AppiumDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+
 	}
 	public void selectPaymentOption(String _paymentMethod, String _bankOption){
+		pause(1);
 		//waitForElementDisplayed(By.xpath(SummaryPageWapObject.paymentOptionText_Xpath));
 		boolean paymentOption = isElementPresent(By.xpath(SummaryPageWapObject.paymentOptionText_Xpath));
 		if(paymentOption){
-			driver.findElement(By.xpath("//span[contains(text(), '"+_paymentMethod+"')]")).click();
+			if(_paymentMethod.equals("Credit Card")){
+				driver.findElement(By.xpath("//span[contains(text(), '"+_paymentMethod+"')]")).click();
+				log("select ['"+_paymentMethod+"'] as payment method", ILogLevel.METHOD);
+			}
+			else{
+				WebElement element = driver.findElement(By.xpath("//*[@id='paymentoption']/ul/li[2]/div/div[1]/label/span/span[1]"));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
+				log("select ['"+_paymentMethod+"'] as payment method", ILogLevel.METHOD);
+			}
+			
 			pause(3);
 			waitForElementDisplayed(By.id("bankOpDetailsList"));
 			WebElement selectBank = driver.findElement(By.id("bankOpDetailsList"));
@@ -30,7 +42,8 @@ public class SummaryPageWap extends BaseClass {
 			log("select ["+_bankOption+"] from dropdown", ILogLevel.METHOD);
 		}
 	}
-	
+
+
 	public boolean verifyNetPayableAmount(String _expectedAmount){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.netPayableAmount_Xpath));
 		String amount = driver.findElement(By.xpath(SummaryPageWapObject.netPayableAmount_Xpath)).getText();
@@ -38,7 +51,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public void clickProceedSummaryButton(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.proceedSummaryButton_Xpath));
 		driver.findElement(By.xpath(SummaryPageWapObject.proceedSummaryButton_Xpath)).click();
@@ -51,7 +64,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isPromoApplied(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.discountAmountText_Xpath));
 		String promo = driver.findElement(By.xpath(SummaryPageWapObject.discountAmountText_Xpath)).getText();
@@ -59,7 +72,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isRINcashAppliedPDC(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.discountAmountText_Xpath));
 		String promo = driver.findElement(By.xpath(SummaryPageWapObject.discountAmountText_Xpath)).getText();
@@ -67,7 +80,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isappliedRINcashDisplayed(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.RINcashPoint_xpath));
 		boolean RINcash = isElementPresent(By.xpath(SummaryPageWapObject.RINcashPoint_xpath));
@@ -75,7 +88,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isappliedRINcashDisplayedData(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.RINcashAmountText_Xpath));
 		boolean RINcash = isElementPresent(By.xpath(SummaryPageWapObject.RINcashAmountText_Xpath));
@@ -83,7 +96,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isPDCapplied(){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath));
 		String PDCAmount = driver.findElement(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath)).getText();
@@ -91,7 +104,7 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return false;
 	}
-	
+
 	public boolean isRINcashApplied(String _rincash){
 		waitForElementDisplayed(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath));
 		String netPayableSummary= driver.findElement(By.xpath(SummaryPageWapObject.PDCAmountText_Xpath)).getText();
@@ -99,6 +112,6 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return true;
 	}
-	
+
 
 }

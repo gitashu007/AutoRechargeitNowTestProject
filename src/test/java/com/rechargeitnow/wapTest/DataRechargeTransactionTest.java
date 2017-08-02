@@ -57,7 +57,7 @@ public class DataRechargeTransactionTest extends TestCore{
 	}
 
 	@Test(priority=1)
-	public void testDataRechargeFlow_CouponRINcashScen2(){
+	public void testDataRechargeFlow_CouponRINcashScen2(){ 
 		HomePageWap homePage = new HomePageWap(driver);
 		homePage.clickLuckyDrawCrossIcon();
 		homePage.clickLoginButton();
