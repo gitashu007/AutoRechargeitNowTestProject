@@ -74,7 +74,7 @@ public class TestCore extends Page{
 					DesiredCapabilities capabilities=DesiredCapabilities.android();
 					capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
 					capabilities.setCapability(MobileCapabilityType.PLATFORM,Platform.ANDROID);
-					capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, config.getProperty("Platform_Name"));
+					capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
 					capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, config.getProperty("Device_Name"));
 					capabilities.setCapability(MobileCapabilityType.VERSION,config.getProperty("Android_Version"));
 					capabilities.setCapability("newCommandTimeout", 60 * 5);
