@@ -2,6 +2,7 @@ package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -14,7 +15,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class LandingPageWap extends BaseClass{
 
-	public LandingPageWap(AppiumDriver driver) {
+	public LandingPageWap(WebDriver driver) {
 		super(driver);
 	}
 

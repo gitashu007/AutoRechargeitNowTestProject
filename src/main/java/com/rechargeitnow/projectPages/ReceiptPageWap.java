@@ -1,6 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import com.rechargeitnow.pageObject.PaymentGatewayPageObject;
 import com.rechargeitnow.pageObject.ReceiptPageWapObject;
@@ -11,7 +12,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class ReceiptPageWap extends BaseClass {
 
-	public ReceiptPageWap(AppiumDriver driver) {
+	public ReceiptPageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

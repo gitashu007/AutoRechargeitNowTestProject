@@ -29,9 +29,9 @@ import io.appium.java_client.AppiumDriver;
 
 public class BaseClass {
 
-	protected static AppiumDriver driver;
+	protected static WebDriver driver;
 
-	public BaseClass(AppiumDriver driver)
+	public BaseClass(WebDriver driver)
 	{
 		this.driver = driver;
 

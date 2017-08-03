@@ -12,7 +12,7 @@ import com.rechargeitnow.projectPages.RINcashTransactionPageWap;
 import com.rechargeitnow.projectPages.RegistrationPageWap;
 
 public class RINcashWalletMobileEditTest extends TestCore {
-	/*@Test(priority=0)
+	@Test(priority=0)
 	public void testRINcashMobileEdit_WithBlankMobileNo(){
 			HomePageWap homePage = new HomePageWap(driver);
 			homePage.clickLuckyDrawCrossIcon();
@@ -184,7 +184,7 @@ public class RINcashWalletMobileEditTest extends TestCore {
 		Assert.assertTrue(editWalletPage.verifyMobileNoValidation("new mobile no. should be 10 digit"), "Expected validation message doesn't appears");		
 		rincashPage.switchParentWindow1();
 		myAccountPage.clickLogoutIcon();
-	}*/
+	}
 	@Test(priority=6)
 	public void testRINCashMobileEdit_WithValidInputs(){
 		HomePageWap homePage = new HomePageWap(driver);

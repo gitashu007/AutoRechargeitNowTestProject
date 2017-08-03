@@ -2,6 +2,7 @@ package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -9,12 +10,13 @@ import com.rechargeitnow.pageObject.PaymentPageWapObject;
 import com.rechargeitnow.pageObject.SummaryPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
 import com.rechargeitnow.pages.ILogLevel;
+import com.rechargeitnow.pages.TestCore;
 
 import io.appium.java_client.AppiumDriver;
 
 public class SummaryPageWap extends BaseClass {
 
-	public SummaryPageWap(AppiumDriver driver) {
+	public SummaryPageWap(WebDriver driver) {
 		super(driver);
 
 	}
@@ -112,6 +114,6 @@ public class SummaryPageWap extends BaseClass {
 			return true;
 		}return true;
 	}
-
+	
 
 }

@@ -1,7 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
 import com.rechargeitnow.pageObject.PaymentGatewayPageObject;
@@ -13,7 +13,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class PaymentGatewayPage extends BaseClass {
 
-	public PaymentGatewayPage(AppiumDriver driver) {
+	public PaymentGatewayPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

@@ -23,6 +23,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.ScreenshotException;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -33,8 +34,8 @@ public class TestCore extends Page{
 
 	public static Properties object = new Properties();
 	public static Properties config = new Properties();
-	public static WebDriver driver1;
-	public static AppiumDriver driver;
+	public static WebDriver driver;
+	public static AppiumDriver driver1;
 	public static String SCREENSHOT_FOLDER = "target/Screenshots/";
 	public static final String SCREENSHOT_FORMAT = ".png";
 
@@ -53,12 +54,12 @@ public class TestCore extends Page{
 			log("----------- Launching Browser on desktop-------------", ILogLevel.TESTCASE);
 
 			if(config.getProperty("Browser").toLowerCase().contains("firefox")){
-				driver1 = new FirefoxDriver();
+				//System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"\\src\\main\\resources\\drivers\\geckodriver.exe");
+				driver = new FirefoxDriver();
 			}
 			else if(config.getProperty("Browser").toLowerCase().contains("chrome")){
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\src\\main\\resources\\drivers\\chromedriver.exe");
-				driver1 = new ChromeDriver();
-				
+				driver = new ChromeDriver();
 			}
 		}
 		
@@ -80,12 +81,42 @@ public class TestCore extends Page{
 					capabilities.setCapability("newCommandTimeout", 60 * 5);
 					capabilities.setCapability("chromedriverExecutable", app.getAbsolutePath());
 					
-					driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+					driver1 = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+					driver = driver1;
 
 					log("----------- Launching Chrome Browser -------------", ILogLevel.TESTCASE);
 
 				}
+				else if(config.getProperty("Browser").toLowerCase().equals("firefox")){
+					DesiredCapabilities capabilities=DesiredCapabilities.android();
+					capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.FIREFOX);
+					capabilities.setCapability(MobileCapabilityType.PLATFORM,Platform.ANDROID);
+					capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+					capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, config.getProperty("Device_Name"));
+					capabilities.setCapability(MobileCapabilityType.VERSION,config.getProperty("Android_Version"));
+					capabilities.setCapability("newCommandTimeout", 60 * 5);
+					capabilities.setCapability("appPackage", "org.mozilla.firefox");
+					capabilities.setCapability("appActivity", "org.mozilla.firefox.App");
+					//capabilities.setCapability("chromedriverExecutable", app.getAbsolutePath());
+					
+					driver1 = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+					driver = driver1;
+				}
 
+			}
+		}
+		if(config.getProperty("Platform").toLowerCase().contains("mac")){
+			log("----------- Launching Browser on desktop-------------", ILogLevel.TESTCASE);
+
+			if(config.getProperty("Browser").toLowerCase().contains("firefox")){
+				driver = new FirefoxDriver();
+			}
+			else if(config.getProperty("Browser").toLowerCase().contains("chrome")){
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//src//main//resources//mac_driver//chromedriver");
+				driver = new ChromeDriver();
+			}
+			else if(config.getProperty("Browser").toLowerCase().contains("safari")){
+				driver = new SafariDriver();
 			}
 		}
 

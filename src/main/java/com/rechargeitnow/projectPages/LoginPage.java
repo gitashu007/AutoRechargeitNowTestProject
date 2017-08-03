@@ -60,11 +60,6 @@ public class LoginPage extends BaseClass{
 	public void closeKeyboard(){
 		driver.navigate().back();
 	}
-	
-	public void scrollScreen(){
-		driver.scrollToExact("proceed");
-	}
-	
 	public void ConfirmPopup(){
 		waitForElementDisplayed(By.id("android:id/button1"));
 		driver.findElement(By.id("android:id/button1")).click();

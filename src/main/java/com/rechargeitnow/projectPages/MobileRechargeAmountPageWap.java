@@ -1,6 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import com.rechargeitnow.pageObject.MobileRechargeAmountPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
@@ -11,7 +12,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class MobileRechargeAmountPageWap extends BaseClass{
 
-	public MobileRechargeAmountPageWap(AppiumDriver driver) {
+	public MobileRechargeAmountPageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

@@ -3,6 +3,7 @@ package com.rechargeitnow.projectPages;
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import com.rechargeitnow.pageObject.RINcashTransactionPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
@@ -12,7 +13,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class RINcashTransactionPageWap extends BaseClass{
 
-	public RINcashTransactionPageWap(AppiumDriver driver) {
+	public RINcashTransactionPageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

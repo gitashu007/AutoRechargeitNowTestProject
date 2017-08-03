@@ -2,6 +2,7 @@ package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 
 import com.rechargeitnow.pageObject.EditWalletDetailsPageWapObject;
 import com.rechargeitnow.pages.BaseClass;
@@ -11,7 +12,7 @@ import com.rechargeitnow.pages.TestCore;
 import io.appium.java_client.AppiumDriver;
 
 public class EditWalletDetailsPageWap extends BaseClass{
-	public EditWalletDetailsPageWap(AppiumDriver driver) {
+	public EditWalletDetailsPageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

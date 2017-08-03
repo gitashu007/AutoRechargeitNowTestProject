@@ -1,6 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -12,7 +13,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class ViewProfilePageWap extends BaseClass{
 
-	public ViewProfilePageWap(AppiumDriver driver) {
+	public ViewProfilePageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

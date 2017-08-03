@@ -1,6 +1,7 @@
 package com.rechargeitnow.projectPages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import com.rechargeitnow.pageObject.LoginPageWapObject;
 import com.rechargeitnow.pageObject.MyAccountPageWapObject;
@@ -11,7 +12,7 @@ import io.appium.java_client.AppiumDriver;
 
 public class MyAccountPageWap extends BaseClass{
 
-	public MyAccountPageWap(AppiumDriver driver) {
+	public MyAccountPageWap(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
