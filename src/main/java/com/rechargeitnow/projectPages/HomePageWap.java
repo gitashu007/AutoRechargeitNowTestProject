@@ -26,11 +26,13 @@ public class HomePageWap extends BaseClass{
 	}
 	
 	public void clickLuckyDrawCrossIcon(){
+		if(getConfigPropertiesElement("Platform").toLowerCase().equals("android")){
 		waitForElementDisplayed(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath));
 		boolean luckyBanner = isElementPresent(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath));
-		if(luckyBanner){
-			 driver.findElement(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath)).click();
-			 log("click on [X] icon of lucky draw", ILogLevel.METHOD);
+		if(luckyBanner) {
+			driver.findElement(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath)).click();
+			log("click on [X] icon of lucky draw", ILogLevel.METHOD);
+		}
 		}
 		
 	}
@@ -38,11 +40,13 @@ public class HomePageWap extends BaseClass{
 		driver.get(TestCore.config.getProperty("site_url"));
 	}
 	public void clickLuckyDrawCrossIcon2(){
+		if(getConfigPropertiesElement("Platform").toLowerCase().equals("android")){
 		pause(55);
 		boolean luckyBanner = isElementPresent(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath));
-		if(luckyBanner){
-			 driver.findElement(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath)).click();
-			 log("click on [close] icon of download app banner", ILogLevel.METHOD);
+		if(luckyBanner) {
+			driver.findElement(By.xpath(HomePageWapObject.luckyDrawCrossIcon_Xpath)).click();
+			log("click on [close] icon of download app banner", ILogLevel.METHOD);
+		}
 		}
 	}
 	public void getPageSource(){
